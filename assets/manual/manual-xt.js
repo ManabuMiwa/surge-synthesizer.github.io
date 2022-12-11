@@ -28,7 +28,7 @@ const initToc = function() {
   else html=JSON.parse(html)
   button.innerHTML = html
   let aria = sessionStorage.getItem('aria')
-  if (aria == null) { aria = 'false' }  
+  if (aria == null) { aria = 'false' }
   else aria=JSON.parse(aria)
   button.setAttribute('aria-expanded', aria)
 }
