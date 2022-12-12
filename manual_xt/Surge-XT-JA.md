@@ -143,7 +143,7 @@ The user-interface of Surge XT is divided into four main sections:
 
 Keeping this structure in mind will make it easier to understand the layout.
 
-![Illustration 1: The four sections the user-interface that Surge XT is divided into.](../manual_xt/images/Pictures/sections.png)
+![Illustration 1: The four sections the user-interface that Surge XT is divided into.](../manual_xt/images/Pictures/ja/sections.png)
 
 *The four sections of the user-interface that Surge is divided into.*
 
@@ -155,7 +155,7 @@ traditional synthesizer patch as it stores all the information used to synthesiz
 Since there are two scenes in each patch, it's possible to have layered or split sounds stored within a single patch.
 (see [Scene Select and Scene Mode](#scene-select-and-scene-mode)).
 
-![Illustration 2: Both scenes and all effect settings are stored in every patch.](../manual_xt/images/Pictures/illu2.png)
+![Illustration 2: Both scenes and all effect settings are stored in every patch.](../manual_xt/images/Pictures/ja/illu2.png)
 
 ## オーディオ出力
 
