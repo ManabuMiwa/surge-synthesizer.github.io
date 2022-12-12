@@ -33,6 +33,9 @@
             case "EN RACK":
                 document.getElementById("manualLinks").innerHTML = "Manual";
                 document.getElementById("manualLinks").href = "/rack_xt_manual";
+            case "JA XT":
+                document.getElementById("manualLinks").innerHTML = "マニュアル";
+                document.getElementById("manualLinks").href = "/manual-xt-JA";
                 break;
             case "EN XT":
             case "default":
@@ -85,9 +88,11 @@
         <select class="flagHolder" id="linkSelect" onchange="manualChange()">
             <option value="EN XT" {% if page.title == "Surge XT User Manual" %}selected{% endif %}>EN (XT)</option>
             <option value="EN RACK" {% if page.title == "Surge XT in VCV Rack" %}selected{% endif %}>EN (Rack)</option>
+            <option value="JA XT" {% if page.title == "Surge XT ユーザーマニュアル" %}selected{% endif %}>JA (XT)</option>
             <option value="EN 1.9" {% if page.title == "Surge 1.9 User Manual" %}selected{% endif %}>EN (1.9)</option>
             <option value="DE 1.9" {% if page.title == "Handbuch" %}selected{% endif %}>DE (1.9)</option>
             <option value="EN XT PDF">EN PDF (XT)</option>
+            <option value="JA XT PDF">JA PDF (XT)</option>
         </select>
 
         <a id="manualLinks" class="link-primary primary-link" href="/manual-xt">Manual</a>
