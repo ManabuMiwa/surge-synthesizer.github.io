@@ -83,7 +83,7 @@ Mac 向けには、 Audio Unit (AU) 、 VST3 、 および CLAP プラグイン�
   - 64ビット版 AU または VST 互換のホストアプリケーション
 
 インストールにはパッケージインストーラーを使用してください。 AU 版の `Surge XT.component` と、 VST3 または CLAP プラグインについてそれぞれの現在の保存場所に自動的にインストールを行うための選択肢が表示されます。
-工場出荷時のパッチと波形テーブルも自動的にインストールされます。
+工場出荷時のパッチとウェーブテーブルも自動的にインストールされます。
 
 パッケージインストーラーを実行すると、その Mac の全ユーザーに対して Surge XT がインストールされます。
 
@@ -113,17 +113,17 @@ Surge XT は Surge の進化形ではある一方、まったく新しいプラ�
 
 ### Windows
 
-パッチライブラリーと波形テーブルは `C:ProgramData\Surge XT` に保存されています。
+パッチライブラリーとウェーブテーブルは `C:ProgramData\Surge XT` に保存されています。
 ユーザーパッチは `C:\Users\your username\My Documents\Surge XT` に保存されています。
 
 ### macOS
 
-パッチライブラリーと波形テーブルは `/Library/Application Support/Surge XT` に保存されています。
+パッチライブラリーとウェーブテーブルは `/Library/Application Support/Surge XT` に保存されています。
 ユーザーパッチは `~/Documents/Surge XT` に保存されています。
 
 ### Linux
 
-標準インストールでは、パッチライブラリーと波形テーブルは `/usr/share/surge-xt` に保存されています。
+標準インストールでは、パッチライブラリーとウェーブテーブルは `/usr/share/surge-xt` に保存されています。
 ユーザーパッチは `~/Documents/Surge XT` に保存されます。 このフォルダーは、はじめてパッチを保存したり、ユーザーのデフォルト設定の変更を行なった際に作成されます。
 
 メモ: この保存場所は Surge XT のメニューから変更が可能です ([データフォルダー](#data-folders)を参照してください) 。
@@ -135,59 +135,54 @@ Surge XT のインストーラーはユーザーデータの格納場所には�
 
 # ユーザーインターフェイスの基本
 
-The user-interface of Surge XT is divided into four main sections:
-  - Header
-  - Scene controls
-  - Modulation/Routing
-  - Effects
+Surge XT のユーザーインターフェイスは主に4つのセクションに分けられます:
+  - ヘッダー
+  - シーンコントロール
+  - モジュレーションとルーティング
+  - エフェクト
 
-Keeping this structure in mind will make it easier to understand the layout.
+この構成を頭に入れておくと、レイアウトの理解が容易になります。
 
 ![Illustration 1: The four sections the user-interface that Surge XT is divided into.](../manual_xt/images/Pictures/ja/sections.png)
 
-*The four sections of the user-interface that Surge is divided into.*
+*Surge XT のユーザーインターフェイスで分割されている4つのセクション*
 
 ## シーンの概念
 
-Every patch in Surge XT contains two scenes (A & B) and an effect-section.
-Both scenes and all effect settings are stored in every patch. A scene is similar to a
-traditional synthesizer patch as it stores all the information used to synthesize a voice.
-Since there are two scenes in each patch, it's possible to have layered or split sounds stored within a single patch.
-(see [Scene Select and Scene Mode](#scene-select-and-scene-mode)).
+Surge XT のすべてのパッチは2つのシーン (AおよびB) とエフェクトセクションが含まれます。
+パッチにはシーンと全エフェクト設定の両方が保存されます。 シーンにはボイスの合成に使用される全情報が保存されるという点で、旧来のシンセサイザーにおけるパッチと似ています。
+パッチには2つのシーンが存在するため、ひとつのパッチ内でレイヤーやスプリットといった音色を作成可能です ( [シーンの選択とシーンモード](#scene-select-and-scene-mode) を参照してください) 。
 
-![Illustration 2: Both scenes and all effect settings are stored in every patch.](../manual_xt/images/Pictures/ja/illu2.png)
+![Illustration 2: パッチにはシーンと全エフェクト設定の両方が保存される](../manual_xt/images/Pictures/ja/illu2.png)
 
 ## オーディオ出力
 
-When loaded into a DAW, each instance of Surge XT has **3 audio outputs**:
+DAW に読み込まれると、 Surge XT の各インスタンスには**3つのオーディオ出力**が用意されます:
 
-- Stereo Out
-- Scene A Out
-- Scene B Out
+- ステレオ出力
+- シーンA出力
+- シーンB出力
 
-Depending on the host, those outputs can be used and routed to be processed separately.
+ホストアプリケーションによっては、これら出力を使用、ルーティングして個別に加工できます。
 
 ## スライダーとコントロール
 
-The most common user-interface control in Surge XT is the slider. They come
-in both horizontal and vertical orientations but their functionality is
-otherwise identical.
+Surge XT でもっとも一般的なユーザーインターフェイスコントロールはスライダーです。 スライダーには横向きのものと縦向きのものがありますが、見た目以外の機能は同一です。
 
-Sliders are always dragged, there is no jump if you click on the slider
-tray instead of the slider head, it enters dragging mode nonetheless.
+スライダーは常にドラッグで操作され、スライダーのつまみの代わりに溝をクリックしても値が瞬時に変化したりせず、ドラッグ操作モードに移行します。
 
-Slider interactions:  
-  - **Left-click drag** - Drag slider
-  - **Shift + Left-click drag** - Drag slider (fine)
-  - **Ctrl/Cmd + Left-click drag** - Drag slider (quantized steps)
-  - **Alt + Left-click drag** - Drag slider in elastic mode (snaps back to initial position upon release)
-  - **Scroll Wheel** - Move Slider
-  - **Shift + Scroll Wheel** - Move slider (fine)
-  - **Double left-click** - Reset parameter to default value  
-  - **Right-click** - Context menu
-  - **Hover** - See the slider's current value without clicking on it
+スライダーで行える操作:
+  - **左クリック後ドラッグ** - スライダーの移動
+  - **Shift キー + 左クリック後ドラッグ** - スライダー移動 (微調整)
+  - **Ctrl/command キー + 左クリック後ドラッグ** - スライダー移動 (値を基準とする段階的な調整)
+  - **Alt/option キー + 左クリック後ドラッグ** -　ゴムバンドモードでスライダー移動 (マウスボタンを話すとスライダーが元の位置に戻る)
+  - **マウスホイール** - スライダー移動
+  - **Shift キー + マウスホイール** - スライダー移動 (微調整)
+  - **左ボタンをダブルクリック** - パラメーターを既定値にリセット
+  - **右クリック** - コンテキストメニュー
+  - **ホバー (マウスカーソルを重ねる)** - クリックせずにスライダーの現在値を確認
 
-Other than sliders, some of Surge XT's parameters are also displayed as number and value fields, buttons and button rows.
+Surge XT のパラメーターはスライダーの他に、値の入力フィールドやボタン、およびボタン列で表示されるものもあります。
 
 ## 取り消しとやり直し
 
