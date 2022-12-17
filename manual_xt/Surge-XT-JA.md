@@ -25,6 +25,7 @@ layout: manual
 </div>
 
 # はじめに
+{: #getting-started}
 
 **Surge XT** をご使用いただきありがとうございます！
 
@@ -39,6 +40,7 @@ Surge XT のシンセシスエンジンやその他の高度な技術仕様と�
 最後に、さらなるヒントやテクニック、チュートリアル、そして追加コンテンツのダウンロード方法については、 [Surge's wiki](https://github.com/surge-synthesizer/surge-synthesizer.github.io/wiki) をご覧ください。
 
 ## Surge XT のインストールとビルド
+{: #installing-or-building-surge-xt}
 
 *Audio Units および AU は Apple Computer, Inc の商標です。
 VST は Steinberg Media Technologies GmbH* の商標です。
@@ -82,7 +84,7 @@ Mac 向けには、 Audio Unit (AU) 、 VST3 、 および CLAP プラグイン�
   - 少なくとも 4GB の RAM
   - 64ビット版 AU または VST 互換のホストアプリケーション
 
-インストールにはパッケージインストーラーを使用してください。 AU 版の `Surge XT.component` と、 VST3 または CLAP プラグインについてそれぞれの現在の保存場所に自動的にインストールを行うための選択肢が表示されます。
+インストールにはパッケージインストーラーを使用してください。 AU 版の `Surge XT.component` と、 VST3 または CLAP プラグインについてそれぞれの現在の保存場所に自動的にインストールを行うためのオプションが表示されます。
 工場出荷時のパッチとウェーブテーブルも自動的にインストールされます。
 
 パッケージインストーラーを実行すると、その Mac の全ユーザーに対して Surge XT がインストールされます。
@@ -102,6 +104,7 @@ Linux には多くのディストリビューションが存在し、また他�
 たいていの場合はデスクトップ環境のそのようなグローバルジェスチャーをオフにできますし、それがこのような問題を解消するもっとも簡単な方法になるでしょう。
 
 ### ソースコードからのビルド
+{: #building-from-source}
 
 Surge XT をソースコードからビルドしたい場合は、 [Github リポジトリー](https://github.com/surge-synthesizer/surge)内の手順を参照してください。
 
@@ -110,6 +113,7 @@ Surge XT をソースコードからビルドしたい場合は、 [Github リ�
 Surge XT は Surge の進化形ではある一方、まったく新しいプラグインでもあります。 これは Surge 1.9 以前のバージョンとの共存インストールが簡単に行えること、そして旧バージョンの Surge を使用しているプロジェクトを開くには引き続き Surge 1.9 を削除せず併存させておく必要があることを意味します。
 
 ## 各ファイルの保存場所
+{: #locations}
 
 ### Windows
 
@@ -134,6 +138,7 @@ Surge XT のインストーラーはユーザーデータの格納場所には�
 したがってカスタムスキンをインストールしたり、パッチを保存したり、その他コンテンツの追加を行う場合、工場出荷データのフォルダーではなくユーザーデータフォルダーに保存するようにしてください。 これによって、 Surge XT のアップグレード時にデータを失うリスクを回避できます。
 
 # ユーザーインターフェイスの基本
+{: #user-interface-basics}
 
 Surge XT のユーザーインターフェイスは主に4つのセクションに分けられます:
   - ヘッダー
@@ -143,29 +148,32 @@ Surge XT のユーザーインターフェイスは主に4つのセクション�
 
 この構成を頭に入れておくと、レイアウトの理解が容易になります。
 
-![Illustration 1: The four sections the user-interface that Surge XT is divided into.](../manual_xt/images/Pictures/ja/sections.png)
+![図: 4つのセクションに分割された Surge XT のユーザーインターフェイス](../manual_xt/images/Pictures/ja/sections.png)
 
 *Surge XT のユーザーインターフェイスで分割されている4つのセクション*
 
 ## シーンの概念
+{: #the-scene-concept}
 
-Surge XT のすべてのパッチは2つのシーン (AおよびB) とエフェクトセクションが含まれます。
-パッチにはシーンと全エフェクト設定の両方が保存されます。 シーンにはボイスの合成に使用される全情報が保存されるという点で、旧来のシンセサイザーにおけるパッチと似ています。
+Surge XT のすべてのパッチには2つのシーン (AおよびB) とエフェクトセクションが含まれます。
+パッチにはシーンと全エフェクト設定の両方が保存されます。 シーンにはボイスの合成に使用される全情報が保存されるという点で、従来のシンセサイザーにおけるパッチと似ています。
 パッチには2つのシーンが存在するため、ひとつのパッチ内でレイヤーやスプリットといった音色を作成可能です ( [シーンの選択とシーンモード](#scene-select-and-scene-mode) を参照してください) 。
 
-![Illustration 2: パッチにはシーンと全エフェクト設定の両方が保存される](../manual_xt/images/Pictures/ja/illu2.png)
+![図2: パッチにはシーンと全エフェクト設定の両方が保存される](../manual_xt/images/Pictures/ja/illu2.png)
 
 ## オーディオ出力
+{: #audio-outputs}
 
-DAW に読み込まれると、 Surge XT の各インスタンスには**3つのオーディオ出力**が用意されます:
+DAW によってプラグインがロードされると、 Surge XT の各インスタンスには**3つのオーディオ出力**が用意されます:
 
 - ステレオ出力
 - シーンA出力
 - シーンB出力
 
-ホストアプリケーションによっては、これら出力を使用、ルーティングして個別に加工できます。
+ホストアプリケーションによっては、これら出力を個別に加工できるように使用、ルーティングできます。
 
 ## スライダーとコントロール
+{: #sliders-and-controls}
 
 Surge XT でもっとも一般的なユーザーインターフェイスコントロールはスライダーです。 スライダーには横向きのものと縦向きのものがありますが、見た目以外の機能は同一です。
 
@@ -174,7 +182,7 @@ Surge XT でもっとも一般的なユーザーインターフェイスコン�
 スライダーで行える操作:
   - **左クリック後ドラッグ** - スライダーの移動
   - **Shift キー + 左クリック後ドラッグ** - スライダー移動 (微調整)
-  - **Ctrl/command キー + 左クリック後ドラッグ** - スライダー移動 (値を基準とする段階的な調整)
+  - **Ctrl/command キー + 左クリック後ドラッグ** - スライダー移動 (決まった数値を基準とする段階的な調整)
   - **Alt/option キー + 左クリック後ドラッグ** -　ゴムバンドモードでスライダー移動 (マウスボタンを話すとスライダーが元の位置に戻る)
   - **マウスホイール** - スライダー移動
   - **Shift キー + マウスホイール** - スライダー移動 (微調整)
@@ -182,136 +190,136 @@ Surge XT でもっとも一般的なユーザーインターフェイスコン�
   - **右クリック** - コンテキストメニュー
   - **ホバー (マウスカーソルを重ねる)** - クリックせずにスライダーの現在値を確認
 
-Surge XT のパラメーターはスライダーの他に、値の入力フィールドやボタン、およびボタン列で表示されるものもあります。
+Surge XT のパラメーターはスライダーの他に、数値の入力フィールドやボタン、およびボタン列で表示されるものもあります。
 
 ## 取り消しとやり直し
+{: #undo-and-redo}
 
-Below the [Patch Browser](#patch-browser), you will find curved arrow buttons just to the left of the **Save** button.
-Clicking on these will allow you to undo and redo the latest changes. You can also use keyboard shortcuts (by default,
-Ctrl+Z and Ctrl+Y) to undo and redo respectively.
+[パッチブラウザー](#patch-browser)の下、**保存**ボタンの左側に曲がった矢印のボタンがあります。
+これらボタンをクリックすると直前の変更を取り消し (Undo) したりやり直し (Redo) したりできます。
+また、キーボードショートカットを使用して取り消し (既定では Ctrl + Z) ややり直し (既定では Ctrl + Y) を行うことも可能です。
 
 ### パラメーターコンテキストメニュー
+{: #parameter-context-menu}
 
-Any parameter's context menu can be brought up with a right-click. This menu has numerous useful functions:
+マウスの右クリックで、任意のパラメーターのコンテキストメニューを開くことができます。 このメニューには数々の便利な機能があります。
 
-![Illustration 3: Slider context menu](../manual_xt/images/Pictures/slider_context_menu.png)
+![図3: スライダーのコンテキストメニュー](../manual_xt/images/Pictures/slider_context_menu.png)
 
 #### 名前と状況依存ヘルプ
+{: #name-and-contextual-help}
 
-Clicking on this first option will open this user manual to the correct section explaining the parameter in question.
-Alternatively, you can simply hover over the control in question and press F1.
+最初のオプションをクリックすると、本ユーザーマニュアル内で該当のパラメーターについて説明されている正しい箇所が開きます。
+また、オプションにマウスカーソルを合わせて F1 キーをクリックしても同様の結果が得られます。
 
-#### 値の編集 (Edit Value)
+#### 数値の編集 (Edit Value)
+{: #edit-value}
 
-This option allows you to type in the desired value of a parameter. Once the value popup appears, its text will
-already be highlighted, and you can start typing the value right away. When you are done, simply press Enter to
-confirm the change. To cancel and close this popup, simply press the Escape key or move any other parameter.
+このオプションを使用すると、パラメーターを希望する値にキーボードから直接入力できます。
+数値のポップアップが表示されると文字列がすでに選択状態となっているので、すぐに新しい値を入力開始できます。 完了したら Enter キーを押して変更を確定します。
+変更をキャンセルしてポップアップを閉じるには、 Escape キーを押すか他のパラメーターに移動します。 Surge XT の数値入力ウィンドウでは、値の入力時に単位を添える必要はありません。
 
-Note that for any value type-in windows in Surge XT, there is no need to type in the unit of the entered value.
+![図4: 数値入力ウィンドウ](../manual_xt/images/Pictures/typein_window.png)
 
-![Illustration 4: Type-in window](../manual_xt/images/Pictures/typein_window.png)
+固定値から選択するタイプのパラメーター (ユニゾン発音数やボタン列など) については、数値入力ウィンドウの代わりに、選択可能なすべての数値がメニューに表示されるので、それらを直接選択できます。
 
-For discrete parameters (Unison Voices, or a button row for instance), instead of a type-in field, all the possible
-values will be displayed right in the menu so they can be accessed directly.
+![図5: 固定値から選択するタイプのパラメーター](../manual_xt/images/Pictures/discrete_values.png)
 
-![Illustration 5: Discrete parameters](../manual_xt/images/Pictures/discrete_values.png)
+#### 数値の範囲を拡張 (Extend Range)
+{: #extend-range}
 
-#### 範囲の拡張 (Extend Range)
-
-Some parameters can have their range extended. The option **Extend range** will appear in the context menu
-if they do. **Pitch**, for instance, is one of those parameters.
+一部のパラメーターでは、その数値の範囲を拡張できます。 そのようなパラメーターのコンテキストメニューには**値の範囲を拡張 (Extend range)** オプションが表示されます。
+たとえば**ピッチ (Pitch)** がそのようなパラメーターに該当します。
 
 #### テンポの同期 (Tempo Sync)
+{: #tempo-sync}
 
-Some parameters can be synchronized to the host tempo. The option **Tempo sync** will appear in the
-context menu if they do.
+一部のパラメーターはホストアプリケーションのテンポと同期でき、そのようなパラメーターには**テンポの同期 (Tempo sync)** オプションがコンテキストメニューに表示されます。
 
-Once tempo-synced, when using the Surge XT Classic skin, the slider will show a "TS" symbol on their handles to indicate that state, like so:
+Surge XT の Classic スキンでテンポの同期を使用すると、下図のようにスライダーのハンドルに "TS" マークが表示され、現在の状態を反映します:
 
-![Illustration 6: Tempo sync slider](../manual_xt/images/Pictures/ts_slider.png)
+![図6: テンポの同期がオンになっているスライダー](../manual_xt/images/Pictures/ts_slider.png)
 
-This indication can vary depending on the skin used.
+この表示は使用中のスキンによって異なります。
 
 #### 有効／無効
+{: #enabled}
 
-Some parameters can be enabled or disabled. If a slider appears transparent or is missing its handle,
-in some cases, it can be because the parameter is disabled. To toggle it, simply click on that option.
+一部のパラメーターでは有効、無効の状態を切り替えることができます。 スライダーが半透明だったり、あるいはハンドルがなかったりする場合は、パラメーターが無効になっている可能性があります。
+有効、無効を切り替えるには、該当する選択肢をクリックします。
 
 #### モジュレーション
+{: #modulations}
 
-This section of the menu will appear if the right-clicked slider is being modulated by some modulation source(s) (if it has a blue tint). 
-See [Routing](#routing) for more information.
+右クリックされたスライダーで、ひとつまたは複数のモジュレーションソースによるモジュレーションがオンになっている場合 (スライダーが青みがかっている場合) 、このメニューセクションが表示されます。 詳細については[ルーティング](#routing)を参照してください。
 
-- **Red X icon** - Clicking on this icon to the left of a modulation source will clear that modulation routing.
-- **Speaker icon** - Clicking on this will allow you to mute (bypass) a modulation source in the list. Simply click
-that icon again to unmute that source.
-- **Pencil icon** - This will bring up the modulation amount type-in window.
-Simply type-in the desired amount of modulation you want to apply to that parameter. See 
-[Edit Value](#edit-value) for more information.
+- **赤い X アイコン** - モジュレーションソース名の左側にあるこのアイコンをクリックすると、対応するモジュレーションルーティングが削除されます。
+- **スピーカーアイコン** - クリックすると対応するモジュレーションソースをミュート (バイパス) できます。 もう一度クリックするとミュート解除します。
+- **鉛筆アイコン** - クリックするとモジュレーション量の数値入力ウィンドウが表示されます。 希望するモジュレーション量を入力すると対応するパラメーターに変更が反映されます。 詳しくは[数値の編集 (Edit Value)](#edit-value) を参照してください。
 
 #### モジュレーションの追加 (Add Modulation From...)
+{: #add-modulation-from}
 
-As its name suggests, this menu entry allows you to directly link a modulator to the right-clicked control.
-All the available modulation sources are sorted in different categories so you can find the desired one easier.
-Once a modulation source is chosen, a type-in window will appear, allowing you to enter the modulation amount you
-want to apply.
+名前の示すように、このメニュー項目を使用すると右クリックされたコントロールとモジュレーション先とをリンクできます。
+利用可能なモジュレーションソースはすべてカテゴリーごとに整理されているので、簡単にお目当ての項目を見つけることができます。
+モジュレーションソースを選択すると数値入力ウィンドウが表示され、適用したいモジュレーション量を入力できます。
 
 #### パラメーターのアサイン (Assign Parameter To...)
+{: #assign-parameter-to}
 
-This option allows to assign the right-clicked parameter to any MIDI CC.
+このオプションを使用すると、右クリックされたパラメーターに対して任意の MIDI コントロールチェンジを割り当てることができます。
 
 #### MIDI メッセージの学習 (MIDI Learn)
+{: #midi-learn}
 
-This is where you assign a MIDI controller to the desired slider. To abort MIDI learning on that parameter,
-simply right-click again and the option will now become **Abort Parameter MIDI Learn**.
+この項目を使用して MIDI コントローラーに希望するスライダーを割り当てることができます。 パラメーターに対する MIDI メッセージの学習を中断するには、もう一度右クリックします。
+すると、メニュー項目名が**パラメーターの MIDI メッセージ学習の中断 (Abort Parameter MIDI Learn)** に変化します。
 
 #### 学習済み MIDI メッセージのクリア (Clear learned MIDI)
+{: #clear-learned-midi}
 
-This option will be available if the selected parameter has already been MIDI learned. It allows you to clear that link (the
-existing link MIDI CC number will be shown in parentheses).
+選択されたパラメーターがすでに MIDI メッセージを学習済みの場合にこのオプションが表示されます。 これを使用してスライダーと MIDI コントローラーとのリンクを解除できます (既存の MIDI コントロールチェンジ番号が括弧付きで表示されます) 。
 
 #### VST3 オプション (VST3 Options)
+{: #vst3-options}
 
-Finally, the VST3 version of Surge XT supports VST3 context menu items. Depending on the host,
-there may be more or less options regarding automation, MIDI, or parameter values.
+VST3 版の Surge XT では VST3 のコンテキストメニュー項目がサポートされます。
+ホストアプリケーションにより数は異なりますが、オートメーションや MIDI 、あるいはパラメーター数値に関するオプションが表示されます。
 
 # ヘッダー
+{: #header}
 
-![Illustration 7: Header section](../manual_xt/images/Pictures/header.png)
+![図7: ヘッダーセクション](../manual_xt/images/Pictures/header.png)
 
 ## シーンの選択とシーンモード
+{: #scene-select-and-scene-mode}
 
-![Illustration 8: Scene select and scene mode](../manual_xt/images/Pictures/scene_select.png)
+![図8: シーンの選択とシーンモード](../manual_xt/images/Pictures/scene_select.png)
 
-There are two setups of all controls within the Scene section of the user interface.
-The **Scene Select** buttons **[A|B]** determine which one is selected for editing.
-Right-clicking on these buttons brings up a context menu that allows you to copy/paste scene content.
+ユーザーインターフェイスのシーンセクション内のすべてのコントロールには二組のセットアップが存在しています。
+**シーン選択**ボタン **[A|B]** を使用して、現在どちらのシーンが選択状態にあり編集可能か指定することができます。
+これらのボタンを右クリックして表示されるコンテキストメニューを使用して、シーンの内容をコピー、ペーストすることができます。
 
-Depending on the **Scene Mode**, these two buttons could also be used to choose which scene will be *played*.
-Indeed, whether a scene will generate a voice when a key is pressed is determined by the **Scene Mode** setting:
+**シーンモード**に応じて、これら二つのボタンを使用して現在どちらのシーンが*発音される*か選択できます。
+実際には、打鍵時にそれぞれのシーンで音が鳴るかどうかは、**シーンモード**の設定によって決まります:
 
-  - **Single** – Notes will be played only by the selected scene.
-  - **Key Split** – Notes below the **split key** will be played by scene A,
-    notes above and including the **split key** will be played by scene
-    B.
-  - **Channel Split** Notes from MIDI channels below the **split MIDI channel** will be played by scene A,
-    notes from MIDI channels above and including the **split MIDI channel** will be played by scene B.
-  - **Dual** – Both scenes will play all the  notes.
+  - **シングル (Single)** – 選択されたシーンのみで音が鳴ります。
+  - **キースプリット (Key Split)** – **スプリットキー**より低いノートにはシーンAが、**スプリットキー**と同じか高いノートにはシーンBが使用されます。
+  - **チャンネルスプリット Channel Split** - **スプリット MIDI チャンネル**より小さい数字の MIDI チャンネルのノートにはシーンAが、**スプリット MIDI チャンネル**と同じか大きい MIDI チャンネルのノートにはシーン　Bが、それぞれ発音に使用されます。
+  - **デュアル (Dual)** – 全鍵域で両方のシーンの音が鳴ります。
 
-In both **Key Split** and **Dual** mode, if MPE is disabled, the system also supports MIDI channel routing where Channel 2 plays only
-Scene A and channel 3 plays only Scene B. MIDI channel 1 and all other channels higher than 3 play the Split/Dual mode.
+MPE が無効の場合、**キースプリット**および**デュアル**の両モードでは MIDI チャンネルルーティングがサポートされます。 これによってチャンネル2を使用して演奏するとシーンAのみが、チャンネル3を使用して演奏するとシーンBのみがそれぞれ発音され、 MIDI チャンネル1およびチャンネル3より大きいチャンネルすべてではスプリットまたはデュアルモードとして発音されます。
 
-**Poly** shows the number of voices currently playing and allows you to
-set an upper limit to the number of voices allowed to play at the same
-time by dragging horizontally on the value. The voice-limiter will kill off excess voices gently to avoid
-audible artifacts, thus it's not uncommon for the voice count to exceed
-the limit.
+**同時発音数 (Poly)** では現在発音中のボイス数が表示され、この値を横方向にドラッグすることで発音の許容されるボイスの最大数を設定できます。
+初音数を超過したボイスが不自然に途切れることのないよう、ボイスリミッターがこれを目立たないように消音しますので、ボイス数が制限を超えているという状況は往々にしてあるものです。
 
 ## パッチブラウザー
+{: #patch-browser}
 
 ![Illustration 9: Patch browser](../manual_xt/images/Pictures/patchbrowser.png)
 
 ### ナビゲーション
+{: #navigation}
 
 Cycling through sounds in Surge XT is easy: just press the arrow buttons
 until you find something you like. If you left-click the patch-name
@@ -347,6 +355,7 @@ Finally, the patch menu allows you to rename or delete a patch. Those options wi
 non-factory patch loaded in the synth.
 
 ### パッチの検索
+{: #searching-patches}
 
 To search patches by name, simply click on the magnifier glass icon to the left of the patch name area.
 You may see Surge XT first update the patch database before being able to type in your search query.
@@ -359,6 +368,7 @@ the main menu, holding Ctrl while selecting your desired search result with your
 close the search results.
 
 ### 保存ダイアログ
+{: #the-save-dialog}
 
 ![Illustration 10: Save dialog](../manual_xt/images/Pictures/store_dialog.png)
 
@@ -375,11 +385,13 @@ Holding down the **Shift** key when saving a patch will automatically overwrite 
 bypasses the dialog asking you for an overwrite confirmation.
 
 ### お気に入りへのパッチの追加
+{: #favoriting-patches}
 
 Adding a patch to your favorites list is as easy as pressing the heart icon to the right of the patch name area.
 Right-clicking on that same icon will allow you to access the favorite patches list.
 
 ## ステータスエリア
+{: #status-area}
 
 ![Illustration 11: Status area](../manual_xt/images/Pictures/status.png)
 
@@ -396,6 +408,7 @@ Alternatively, **.scl** and **.kbm** files can also be dragged and dropped anywh
 custom tuning.
 
 ## FX のバイパス、キャラクター、グローバル音量
+{: #fx-bypass-character-global-volume}
 
 ![Illustration 12: FX bypass, character and global volume](../manual_xt/images/Pictures/fx_bypass.png)
 
@@ -416,6 +429,7 @@ above 0 dBFS. You can choose to hard clip the global output either at
 **+18 dBFS** (default) or **0 dBFS**.
 
 # シーンコントロール
+{: #scene-controls}
 
 The UI of the scene section can also be further divided into two parts:
 
@@ -428,6 +442,7 @@ goes through the sound shaping section.
 ![Illustration 13: Scene controls](../manual_xt/images/Pictures/scene_sections.png)
 
 ## サウンドの生成
+{: #sound-generation}
 
 This is where the sound is born. The oscillators generate waveforms
 according to the notes played. They are then summed up in the mixer.
@@ -435,6 +450,7 @@ according to the notes played. They are then summed up in the mixer.
 ![Illustration 14: Sound generation](../manual_xt/images/Pictures/sound_generation.png)
 
 ### オシレーター
+{: #oscillators}
 
 **1/2/3-buttons** – Chooses the active oscillator for editing. You can right-click on one of them
 and a context menu with the name, **Copy** and **Copy (with modulation)** options will show up.
@@ -478,8 +494,10 @@ oscillator type. See [Oscillators](#oscillator-algorithms) in the
 Technical Reference section for more information.
 
 ### ミキサー
+{: #mixer}
 
 #### ミキサーチャンネル
+{: #mixer-channels}
 
 Excluding the **Pre-filter Gain** (slider on the right), the Mixer has 6 channels (sources) from left to right:
 
@@ -492,6 +510,7 @@ Excluding the **Pre-filter Gain** (slider on the right), the Mixer has 6 channel
   - **Noise Oscillator**
 
 #### Channel Parameters
+{: #channel-parameters}
 
 Each channel has the following controls:
 
@@ -514,6 +533,7 @@ Each channel has the following controls:
   - **Slider** – Gain control for each input.
 
 ### その他のサウンド生成パラメーター
+{: #other-sound-generation-parameters}
 
 **Pitch & Octave** – Controls the pitch for the entire scene. Affects
 the filter key-tracking and the keytrack modulation source as well. The
@@ -605,6 +625,7 @@ additional options related to mono notes:
 <br>
 
 ## サウンドの成形
+{: }
 
 ![Illustration 15: Sound shaping](../manual_xt/images/Pictures/sound_shaping.png)
 
