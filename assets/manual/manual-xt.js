@@ -4,14 +4,12 @@ const tocWrapper = document.getElementById('toc-wrapper')
 const mediaQuery = window.matchMedia('(max-width: 800px)')
 const ariaExpanded = document.getElementById('toc-button').getAttribute('aria-expanded')
 
-const tocStringLocalized = function() {
-  const defaultString = 'Contents'
-  const tocStrings = {
-    '/manual-xt/': defaultString,
-    '/manual-xt-JA/': '目次'
-  }
-  return tocStrings[document.location.pathname] || defaultString
+const defaultString = 'Contents'
+const tocStrings = {
+  '/manual-xt/': defaultString,
+  '/manual-xt-JA/': '目次'
 }
+const tocStringLocalized = tocStrings[document.location.pathname] || defaultString
 
 const initToc = function() {
   if (mediaQuery.matches) list.addEventListener('click', toggleToc)
@@ -24,7 +22,7 @@ const initToc = function() {
   else state=JSON.parse(state)
   list.style.display = state
   let html = sessionStorage.getItem('buttonhtml')
-  if (html == null) { html = tocStringLocalized() + ' &#11015;' }
+  if (html == null) { html = tocStringLocalized + ' &#11015;' }
   else html=JSON.parse(html)
   button.innerHTML = html
   let aria = sessionStorage.getItem('aria')
@@ -36,18 +34,18 @@ const initToc = function() {
 const toggleToc = function() {
   if (list.style.display == 'none') {
     list.style.display = 'block'
-    button.innerHTML = tocStringLocalized() + ' &#11014;'
+    button.innerHTML = tocStringLocalized + ' &#11014;'
     button.setAttribute('aria-expanded', 'true')
     sessionStorage.setItem('button', JSON.stringify(list.style.display))
-    sessionStorage.setItem('buttonhtml', '"' + tocStringLocalized() + ' &#11014;"')
+    sessionStorage.setItem('buttonhtml', '"' + tocStringLocalized + ' &#11014;"')
     sessionStorage.setItem('aria', '"true"')
   }
   else {
     list.style.display = 'none'
-    button.innerHTML = tocStringLocalized() + ` &#11015;`
+    button.innerHTML = tocStringLocalized + ` &#11015;`
     button.setAttribute('aria-expanded', 'false')
     sessionStorage.setItem('button', JSON.stringify(list.style.display))
-    sessionStorage.setItem('buttonhtml', '"' + tocStringLocalized() + ' &#11015;"')
+    sessionStorage.setItem('buttonhtml', '"' + tocStringLocalized + ' &#11015;"')
     sessionStorage.setItem('aria', '"false"')
   }
 }
