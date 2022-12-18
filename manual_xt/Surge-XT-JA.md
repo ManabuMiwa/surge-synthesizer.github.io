@@ -155,9 +155,9 @@ Surge XT のユーザーインターフェイスは主に4つのセクション�
 ## シーンの概念
 {: #the-scene-concept}
 
-Surge XT のすべてのパッチには2つのシーン (AおよびB) とエフェクトセクションが含まれます。
-パッチにはシーンと全エフェクト設定の両方が保存されます。 シーンにはボイスの合成に使用される全情報が保存されるという点で、従来のシンセサイザーにおけるパッチと似ています。
-パッチには2つのシーンが存在するため、ひとつのパッチ内でレイヤーやスプリットといった音色を作成可能です ( [シーンの選択とシーンモード](#scene-select-and-scene-mode) を参照してください) 。
+Surge XT のすべてのパッチは2つのシーン (AおよびB) とエフェクトセクションから構成されます。
+二つのシーンと全エフェクト設定の両方がパッチに保存されます。 シーンにはボイスのシンセサイズに使用される全情報が保存されるという点で、従来のシンセサイザーのパッチと似ています。
+Surge XT のパッチには2つのシーンが含まれるため、ひとつのパッチ内でレイヤー (複数の音色を重ね合わせて同時に演奏すること) やスプリット (複数の音色を鍵域によって弾き分けること) といった音色を作成可能です ( [シーンの選択とシーンモード](#scene-select-and-scene-mode) を参照してください) 。
 
 ![図2: パッチにはシーンと全エフェクト設定の両方が保存される](../manual_xt/images/Pictures/ja/illu2.png)
 
@@ -311,187 +311,151 @@ VST3 版の Surge XT では VST3 のコンテキストメニュー項目がサ�
 MPE が無効の場合、**キースプリット**および**デュアル**の両モードでは MIDI チャンネルルーティングがサポートされます。 これによってチャンネル2を使用して演奏するとシーンAのみが、チャンネル3を使用して演奏するとシーンBのみがそれぞれ発音され、 MIDI チャンネル1およびチャンネル3より大きいチャンネルすべてではスプリットまたはデュアルモードとして発音されます。
 
 **同時発音数 (Poly)** では現在発音中のボイス数が表示され、この値を横方向にドラッグすることで発音の許容されるボイスの最大数を設定できます。
-初音数を超過したボイスが不自然に途切れることのないよう、ボイスリミッターがこれを目立たないように消音しますので、ボイス数が制限を超えているという状況は往々にしてあるものです。
+発音数を超過したボイスが不自然に途切れることのないよう、ボイスリミッターがこれを目立たないように消音しますので、ボイス数が制限を超えていても、あまり神経質になる必要はありません。
 
 ## パッチブラウザー
 {: #patch-browser}
 
-![Illustration 9: Patch browser](../manual_xt/images/Pictures/patchbrowser.png)
+![図9: パッチブラウザー](../manual_xt/images/Pictures/patchbrowser.png)
 
 ### ナビゲーション
 {: #navigation}
 
-Cycling through sounds in Surge XT is easy: just press the arrow buttons
-until you find something you like. If you left-click the patch-name
-field (anywhere in the white area), a menu will list all available
-patches arranged into categories. A right-click will bring up a menu with just the
-patches of the current category. If you middle-click on these buttons, a random patch
-will be loaded.
+Surge XT での音色の切り替えは簡単です: 好みの音色が見つかるまで矢印ボタンをクリックし続けるだけです。 パッチ名のフィールド (白いエリア内の任意の箇所) を左クリックすると、カテゴリーごとに整理された使用可能なパッチがメニューに一覧されます。 右クリックすると現在のカテゴリーに含まれる音色のみを一覧します。 これらのボタン上で中央クリックするとランダムなパッチがロードされます。
 
-These categories are also grouped into three sections depending on who created them:
+これらのカテゴリーはまた、その作成者によって3つのセクションにグループ化されています。
 
-  - Factory Patches - Patches created in-house by the Surge XT authors.
+  - ファクトリーパッチ - Surge XT の作者による内製で作成されたパッチです。
 
-  - 3<sup>rd</sup> party patches - Patches created by users and 3<sup>rd</sup> parties.
-    Categorized by creators.
+  - サードパーティパッチ - ユーザーやサードパーティによって作成されたパッチで、作者ごとに分類されています。
 
-  - User Patches - Your own patches will be stored here. How you categorize them
-    is entirely up to you. At the top of this section is where your favorites patches will show up.
+  - ユーザーパッチ - ご自身で作成されたパッチはここに保存されます。 これらをどのように分類するかは完全にあなた次第です。 このセクションの上部にはお気に入りに追加したパッチが表示されます。
 
-At the bottom, there is an option to 
-[download additional content](https://github.com/surge-synthesizer/surge-synthesizer.github.io/wiki/Additional-Content).
+下部には[追加コンテンツのダウンロード (download additional content)](https://github.com/surge-synthesizer/surge-synthesizer.github.io/wiki/Additional-Content)オプションが表示されます。
 
-By default, to help prevent you loosing an unsaved patch by switching patches, a confirmation dialog will open, asking
-you if you still want to proceed. You can turn off this warning by checking the *Don't ask me again* box, or by
-disabling the appropriate option in the [Workflow](#workflow) category found in the [main menu](#main-menu).
-A modified or unsaved patch name will show an asterisk in the patch name area.
+パッチの切り替えによって未保存のパッチを失ってしまうことのないよう、既定では音色を本当に切り替えてもよいか尋ねる確認ダイアログが表示されます。 *今後は確認を行わない (Don't ask me again* box)* チェックボックスをオンにするか、[メインメニュー](#main-menu)内の[ワークフロー (Workflow)](#workflow) カテゴリー内にある該当オプションを無効にすると、この警告をオフにすることができます。
 
-You can also directly load patches (.fxp) by dragging and dropping them anywhere over the Surge XT interface.
+また、 Surge XT のインターフェイスにパッチ (.fxp ファイル) をドラッグ & ドロップすることで直接ロードすることもできます。
 
-There is also an option in the patch menu to set the current patch as the default one to be loaded when
-opening a new instance of Surge XT.
+また、パッチメニューには現在のパッチを新規 Surge XT インスタンスの起動時にロードするパッチとして設定するオプションもあります。
 
-Finally, the patch menu allows you to rename or delete a patch. Those options will only appear if you have a
-non-factory patch loaded in the synth.
+最後に、パッチメニューではパッチの名前を変更したり削除を行うこともできます。 これらのオプションはファクトリーではないパッチを読み込み時にのみ表示されます。
 
 ### パッチの検索
 {: #searching-patches}
 
-To search patches by name, simply click on the magnifier glass icon to the left of the patch name area.
-You may see Surge XT first update the patch database before being able to type in your search query.
+名前を基準にパッチを検索するには、パッチ名左側の主眼鏡アイコンをクリックします。 
+検索文字列を入力可能になるまでに、 Surge XT が初回にパッチデータベースを更新する旨のメッセージが表示される場合があります。
 
-You can also search for patches by **author** or **category** by typing "AUTHOR=" or "CATEGORY=", followed by
-your search query.
+また、検索文字列の直前に "`AUTHOR=`" (作者) または "`CATEGORY=`" (カテゴリー) と入力することで、**作者**または**カテゴリー**ごとに検索を行うことも可能です。
 
-If the **Retain patch search results after loading** option is enabled in the [Workflow](#workflow) category found in
-the main menu, holding Ctrl while selecting your desired search result with your mouse or while pressing enter will
-close the search results.
+メインメニュー内の[ワークフロー (Workflow)](#workflow) カテゴリーで**ロード後にパッチ検索結果を開いたままにする (Retain patch search results after loading)** オプションが有効になっている場合は、マウスによる検索結果のクリック時や Enter キーの押下時に Ctrl キーを一緒に押していると検索結果ウィンドウが閉じることができます。
 
 ### 保存ダイアログ
 {: #the-save-dialog}
 
-![Illustration 10: Save dialog](../manual_xt/images/Pictures/store_dialog.png)
+![図10: 保存ダイアログ](../manual_xt/images/Pictures/store_dialog.png)
 
-Clicking the **Save** button of the patch browser opens the save dialog.
-This is where you name your new patch and choose which category it
-should belong in. You can also create a new category manually here as
-well. The patches you save will end up in the user section at the bottom
-of the patch menu. The save dialog also provides text fields for the name of the patch creator
-and comments.
+パッチブラウザーの**保存 (Save)** ボタンをクリックすると保存ダイアログが表示されます。
+ここで新規パッチに名前をつけて、そのパッチの属するカテゴリーを選択できます。
+また、手動で新規カテゴリーを作成することもできます。
+保存したパッチはパッチメニューの最下部に表示されます。
+保存ダイアログにはまた、パッチの作者名やコメント用のテキストフィールドも表示されます。
 
-Note: You can display the comments of a particular patch by hovering over the patch name area with your mouse.
+メモ: パッチ名のエリアをマウスオーバーすると、そのパッチのコメントを表示できます。
 
-Holding down the **Shift** key when saving a patch will automatically overwrite an existing patch, which 
-bypasses the dialog asking you for an overwrite confirmation.
+既存のパッチを上書き保存する際には通常、上書きしてよいか確認するダイアログが表示されますが、パッチを保存する際に**Shift**キーを押しているとこのダイアログを表示せず、自動的にパッチを上書き保存します。
 
 ### お気に入りへのパッチの追加
 {: #favoriting-patches}
 
-Adding a patch to your favorites list is as easy as pressing the heart icon to the right of the patch name area.
-Right-clicking on that same icon will allow you to access the favorite patches list.
+パッチ名エリアの右側にあるハートアイコンをクリックするだけで、パッチをお気に入りリストに追加できます。
+同アイコンを右クリックすると、お気に入りパッチの一覧を表示できます。
 
 ## ステータスエリア
 {: #status-area}
 
-![Illustration 11: Status area](../manual_xt/images/Pictures/status.png)
+![図11: ステータスエリア](../manual_xt/images/Pictures/status.png)
 
-This area is meant to be a quick access to some of Surge XT's features that are also present in the Menu.
-(see [Main Menu](#main-menu))
+このエリアは、メニューにも存在する Surge XT の機能の一部にすばやくアクセスできるようにすることを目的としています ([メインメニュー (Main Menu)](#main-menu) を参照してください) 。
 
-Right-clicking on one of these buttons will reveal more options which are also present in sub-menus under the Menu button as well.
+これらのボタンを右クリックすると、メニューボタンのサブメニューに存在する追加のオプションを表示できます。
 
-For instance, the first time you press the **Tune** button if no custom tuning is loaded, it will open the same menu
-as if you would have right-clicked on that button. Once a custom tuning is loaded however, left-clicking on it will
-turn the loaded tuning on or off. See [Microtuning](#microtuning) for more information.
+たとえば、カスタムチューニングがロードされていない状態で初回に**チューニング (Tune)** ボタンをクリックすると、ボタンを右クリックしたときと同様のメニューが表示されますが、カスタムチューニングがすでにロードされている場合は、ボタンを左クリックするとロード済みのチューニングをオンまたはオフに切り替えることができます。 詳細情報については [マイクロチューニング (Microtuning)](#microtuning) を参照してください。
 
-Alternatively, **.scl** and **.kbm** files can also be dragged and dropped anywhere on the interface to apply
-custom tuning.
+また、 **.scl** および **.kbm** ファイルを Surge XT のウィンドウにドラッグ & ドロップして、カスタムチューニングを適用することもできます。
 
 ## FX のバイパス、キャラクター、グローバル音量
 {: #fx-bypass-character-global-volume}
 
-![Illustration 12: FX bypass, character and global volume](../manual_xt/images/Pictures/fx_bypass.png)
+![図12: FX のバイパス、キャラクター、グローバル音量](../manual_xt/images/Pictures/fx_bypass.png)
 
-**FX のバイパス (FX Bypass)** lets you quickly hear what a patch sounds like without the effect-units. (see [Effects](#effects))
+**FX のバイパス (FX Bypass)** を使用すると、エフェクターを通さない状態でサウンドをすばやく確認できます　([エフェクト (Effects)](#effects) を参照してください) 。
 
-  - **Off** – Bypass is disabled, all effects are active.
-  - **Send** – The send effects are bypassed.
-  - **Send + Global** - The send and global effects are bypassed.
-  - **All** – All effects are bypassed.
+  - **オフ (Off)** – バイパス状態が無効になり、全エフェクトがアクティブにアクティブになります。
+  - **センド (Send)** – センドエフェクトがバイパスされます。
+  - **センドとグローバル (Send + Global)** - センドおよびグローバルエフェクトがバイパスされます。
+  - **すべて (All)** – すべてのエフェクトがバイパスされます。
 
-**キャラクター (Character)** controls the amount of high-frequency content present in
-most of Surge XT's oscillator algorithms. Available choices are Warm, Neutral
-and Bright.
+**キャラクター (Character)** は Surge XT のオシレーターアルゴリズム多くに含まれる高周波数成分をコントロールします。 暗い (Warm) 、普通 (Normal) 、明るい (Bright) の中から選択できます。
 
-**グローバル音量 (Global Volume)** controls the last gain stage before the output. The
-VU meter above it shows the output level and will become red if it goes
-above 0 dBFS. You can choose to hard clip the global output either at
-**+18 dBFS** (default) or **0 dBFS**.
+**グローバル音量 (Global Volume)** は出力の直前に位置するゲインステージをコントロールします。 上部の VU メーターで出力レベルが確認でき、また 0dBFS を超過すると赤色になります。
+グローバル出力が **+18dBFS** (既定) あるいは **0dBFS** のどちらでハードクリップするか選択できます。
 
 # シーンコントロール
 {: #scene-controls}
 
-The UI of the scene section can also be further divided into two parts:
+シーンセクションの UI はさらに二つのパートに分割されます:
 
-  - Sound generation
-  - Sound shaping
+  - サウンド生成
+  - サウンド成形
 
-The sound is generated and mixed in the sound generation section. After that, it
-goes through the sound shaping section.
+サウンドはサウンド生成セクションで生成、ミックスされ、それからサウンド成形セクションを通過します。
 
-![Illustration 13: Scene controls](../manual_xt/images/Pictures/scene_sections.png)
+![図13: シーンコントロール](../manual_xt/images/Pictures/ja/scene_sections.png)
 
-## サウンドの生成
+## サウンド生成
 {: #sound-generation}
 
-This is where the sound is born. The oscillators generate waveforms
-according to the notes played. They are then summed up in the mixer.
+ここでサウンドが生まれます。 ノートの演奏にしたがって複数のオシレーターが波形を生成し、それらはミキサーによってミックスされます。
 
-![Illustration 14: Sound generation](../manual_xt/images/Pictures/sound_generation.png)
+![図14: サウンド生成](../manual_xt/images/Pictures/ja/sound_generation.png)
 
 ### オシレーター
 {: #oscillators}
 
-**1/2/3-buttons** – Chooses the active oscillator for editing. You can right-click on one of them
-and a context menu with the name, **Copy** and **Copy (with modulation)** options will show up.
+**1/2/3ボタン** - 編集用にアクティブとなるオシレーターを選択します。 右クリックすると**コピー (Copy)** および **モジュレーションを含めてコピー (Copy with modulation)** コンテキストメニューが表示されます。
 
-**Display** – Shows the active waveform. When the **Wavetable** or **Window** oscillator
-is used, it will also work as wavetable selector by clicking on the orange bar or on the straight arrow buttons
-to cycle through them. When the selected oscillator in the display is muted, the waveform will be semi-transparent.
+**ディスプレイ** - アクティブな波形が表示されます。
+**ウェーブテーブル (Wavetable)** または **ウィンドウ (Window)** オシレーターの使用時には、オレンジのバーをクリックするとウェーブテーブルのセレクターとしても機能するほか、矢印ボタンをクリックして順番に切り替えることができます。
+選択中のオシレーターがミュート状態の場合、波形は半透明になります。
 
-**Type** – Oscillator type. Chooses which algorithm is used for the
-oscillator. Available options are:
-- Classic
-- Modern
-- Wavetable
-- Window
-- Sine
+**タイプ** - オシレーターのタイプです。 オシレーターにどのアルゴリズムが使用されるか選択します。 使用可能なオプションは以下のとおりです:
+- クラシック (Classic)
+- モダン (Modern)
+- ウェーブテーブル (Wavetable)
+- ウィンドウ (Window)
+- サイン波 (Sine)
 - FM2
 - FM3
-- String
-- Twist
-- Alias
-- S&H Noise
-- Audio Input.
+- ストリング (String)
+- ツイスト (Twist)
+- エイリアス (Alias)
+- S&H ノイズ (S&H Noise)
+- オーディオ入力 (Audio Input)
 
-See [Oscillators](#oscillator-algorithms) in the Technical Reference section for more information.
+詳細情報についてはテクニカルリファレンスセクションの [オシレーター](#oscillator-algorithms)を参照してください。
 
-**Pitch & Octave** – Controls the pitch for this particular oscillator.
-Its context menu can be used to extend its range, or to set the pitch to **Absolute** mode, which makes the pitch shift
-in absolute frequency as opposed to relative to the note that is being played.
+**ピッチ (Pitch) とオクターブ (Octave)** - 選択中のオシレーターのピッチをコントロールします。
+コンテキストメニューでは数値の範囲を拡張したり、演奏されている音程に対する相対ではなく、絶対的な周波数でピッチを変更できるようにする**絶対 (Absolute)**モードに設定したりできます。
 
-**Keytrack** – When disabled, the oscillator will play the same pitch
-regardless of the key pressed. This button can be right-clicked to toggle its state across all
-oscillators in the scene.
+**キートラック (Keytrack)** - 無効にすると、キーボードの打鍵位置に関係なくオシレーターは常に同じピッチで発音します。 ボタンを右クリックするとシーン内のすべてのオシレーターに対してオンとオフの切り替えをすることができます。
 
-**Retrigger** – If active, the oscillator and all its unison voices will always start immediately
-at the same phase position. This is useful for snappy sounds where you want the
-attack to sound exactly the same each note. This button can be right-clicked to set its state across all
-oscillators in the scene.
+**リトリガー (Retrigger)** - 有効にすると、オシレーターとそのすべてのユニゾンボイスは常に同じ位相位置から発音するようになります。 これは各音のアタックが毎回きっちり同じになるような歯切れのよいサウンドが必要な場合に便利です。
+ボタンを右クリックするとシーン内のすべてのオシレーターに対してオンとオフの切り替えをすることができます。
 
-**Other** - The rest of the sliders from the oscillator editor are specific to each
-oscillator type. See [Oscillators](#oscillator-algorithms) in the
-Technical Reference section for more information.
+**その他のコントロール** - オシレーターエディター内のその他のスライダーは、オシレータータイプごとに固有のものです。
+詳細情報についてはテクニカルリファレンスセクションの [オシレーター](#oscillator-algorithms)を参照してください。
 
 ### ミキサー
 {: #mixer}
@@ -624,7 +588,7 @@ additional options related to mono notes:
 
 <br>
 
-## サウンドの成形
+## サウンド成形
 {: }
 
 ![Illustration 15: Sound shaping](../manual_xt/images/Pictures/sound_shaping.png)
