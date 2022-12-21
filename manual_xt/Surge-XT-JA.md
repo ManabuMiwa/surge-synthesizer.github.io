@@ -71,7 +71,7 @@ VST3 と CLAP 、いずれのバージョンにおいても、プラグインは
 - ポータブルモードを使用すると、 Surge XT の VST3 および CLAP プラグインと同じフォルダーに関連ファイルを保存することができます。
 - Surge XT のインストールされたフォルダーに `SurgeXTData` というフォルダーが存在する場合、工場出荷時データを読み込みの際 `%DOCUMENTS%\Surge XT` の代わりにそちらを参照するようになります。
 - 同フォルダーに `SurgeXTUserData` というフォルダーが存在する場合、 Surge XT はユーザーデータの読み込みの際、 `%DOCUMENTS%\Surge XT` の代わりにそちらを参照するようになります。
-- これらのフォルダーはまったく存在しなくても、ひとつのみでも、あるいは両方存在してもかまいません。 もしそれらが存在しない場合は、 Surge XT は規定の場所を参照するようフォールバックされます。
+- これらのフォルダーはまったく存在しなくても、ひとつのみでも、あるいは両方存在してもかまいません。 もしそれらが存在しない場合は、 Surge XT は既定の場所を参照するようフォールバックされます。
 
 ### macOS
 
@@ -128,7 +128,7 @@ Surge XT は Surge の進化形ではある一方、まったく新しいプラ�
 ### Linux
 
 標準インストールでは、パッチライブラリーとウェーブテーブルは `/usr/share/surge-xt` に保存されています。
-ユーザーパッチは `~/Documents/Surge XT` に保存されます。 このフォルダーは、はじめてパッチを保存したり、ユーザーのデフォルト設定の変更を行なった際に作成されます。
+ユーザーパッチは `~/Documents/Surge XT` に保存されます。 このフォルダーは、パッチの保存や、ユーザー既定の設定変更を初回に行なった際に作成されます。
 
 メモ: この保存場所は Surge XT のメニューから変更が可能です ([データフォルダー](#data-folders)を参照してください) 。
 
@@ -308,7 +308,7 @@ VST3 版の Surge XT では VST3 のコンテキストメニュー項目がサ�
   - **チャンネルスプリット Channel Split** - **スプリット MIDI チャンネル**より小さい数字の MIDI チャンネルのノートにはシーンAが、**スプリット MIDI チャンネル**と同じか大きい MIDI チャンネルのノートにはシーン　Bが、それぞれ発音に使用されます。
   - **デュアル (Dual)** – 全鍵域で両方のシーンの音が鳴ります。
 
-MPE が無効の場合、**キースプリット**および**デュアル**の両モードでは MIDI チャンネルルーティングがサポートされます。 これによってチャンネル2を使用して演奏するとシーンAのみが、チャンネル3を使用して演奏するとシーンBのみがそれぞれ発音され、 MIDI チャンネル1およびチャンネル3より大きいチャンネルすべてではスプリットまたはデュアルモードとして発音されます。
+MPE がオフの場合、**キースプリット**および**デュアル**の両モードでは MIDI チャンネルルーティングがサポートされます。 これによってチャンネル2を使用して演奏するとシーンAのみが、チャンネル3を使用して演奏するとシーンBのみがそれぞれ発音され、 MIDI チャンネル1およびチャンネル3より大きいチャンネルすべてではスプリットまたはデュアルモードとして発音されます。
 
 **同時発音数 (Poly)** では現在発音中のボイス数が表示され、この値を横方向にドラッグすることで発音の許容されるボイスの最大数を設定できます。
 発音数を超過したボイスが不自然に途切れることのないよう、ボイスリミッターがこれを目立たないように消音しますので、ボイス数が制限を超えていても、あまり神経質になる必要はありません。
@@ -331,9 +331,9 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
 
   - ユーザーパッチ - ご自身で作成されたパッチはここに保存されます。 これらをどのように分類するかは完全にあなた次第です。 このセクションの上部にはお気に入りに追加したパッチが表示されます。
 
-下部には[追加コンテンツのダウンロード (download additional content)](https://github.com/surge-synthesizer/surge-synthesizer.github.io/wiki/Additional-Content)オプションが表示されます。
+下部には[追加コンテンツのダウンロード (download additional content)](https://github.com/surge-synthesizer/surge-synthesizer.github.io/wiki/Additional-Content) オプションが表示されます。
 
-パッチの切り替えによって未保存のパッチを失ってしまうことのないよう、既定では音色を本当に切り替えてもよいか尋ねる確認ダイアログが表示されます。 *今後は確認を行わない (Don't ask me again* box)* チェックボックスをオンにするか、[メインメニュー](#main-menu)内の[ワークフロー (Workflow)](#workflow) カテゴリー内にある該当オプションを無効にすると、この警告をオフにすることができます。
+パッチの切り替えによって未保存のパッチを失ってしまうことのないよう、既定では音色を本当に切り替えてもよいか尋ねる確認ダイアログが表示されます。 *今後は確認を行わない (Don't ask me again* box)* チェックボックスをオンにするか、[メインメニュー](#main-menu)内の[ワークフロー (Workflow)](#workflow) カテゴリー内にある該当オプションにチェックを入れると、この警告をオフにすることができます。
 
 また、 Surge XT のインターフェイスにパッチ (.fxp ファイル) をドラッグ & ドロップすることで直接ロードすることもできます。
 
@@ -349,7 +349,7 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
 
 また、検索文字列の直前に "`AUTHOR=`" (作者) または "`CATEGORY=`" (カテゴリー) と入力することで、**作者**または**カテゴリー**ごとに検索を行うことも可能です。
 
-メインメニュー内の[ワークフロー (Workflow)](#workflow) カテゴリーで**ロード後にパッチ検索結果を開いたままにする (Retain patch search results after loading)** オプションが有効になっている場合は、マウスによる検索結果のクリック時や Enter キーの押下時に Ctrl キーを一緒に押していると検索結果ウィンドウが閉じることができます。
+メインメニュー内の[ワークフロー (Workflow)](#workflow) カテゴリーで**ロード後にパッチ検索結果を開いたままにする (Retain patch search results after loading)** オプションがオンになっている場合は、マウスによる検索結果のクリック時や Enter キーの押下時に Ctrl キーを一緒に押していると検索結果ウィンドウが閉じることができます。
 
 ### 保存ダイアログ
 {: #the-save-dialog}
@@ -392,12 +392,12 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
 
 **FX のバイパス (FX Bypass)** を使用すると、エフェクターを通さない状態でサウンドをすばやく確認できます　([エフェクト (Effects)](#effects) を参照してください) 。
 
-  - **オフ (Off)** – バイパス状態が無効になり、全エフェクトがアクティブにアクティブになります。
+  - **オフ (Off)** – バイパス状態がオフになり、全エフェクトがアクティブにアクティブになります。
   - **センド (Send)** – センドエフェクトがバイパスされます。
   - **センドとグローバル (Send + Global)** - センドおよびグローバルエフェクトがバイパスされます。
   - **すべて (All)** – すべてのエフェクトがバイパスされます。
 
-**キャラクター (Character)** は Surge XT のオシレーターアルゴリズム多くに含まれる高周波数成分をコントロールします。 暗い (Warm) 、普通 (Normal) 、明るい (Bright) の中から選択できます。
+**キャラクター (Character)** は Surge XT の多くのオシレーターアルゴリズムに含まれる高周波数成分をコントロールします。 暖かい (Warm) 、普通 (Normal) 、明るい (Bright) の中から選択できます。
 
 **グローバル音量 (Global Volume)** は出力の直前に位置するゲインステージをコントロールします。 上部の VU メーターで出力レベルが確認でき、また 0dBFS を超過すると赤色になります。
 グローバル出力が **+18dBFS** (既定) あるいは **0dBFS** のどちらでハードクリップするか選択できます。
@@ -417,7 +417,7 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
 ## サウンド生成
 {: #sound-generation}
 
-ここでサウンドが生まれます。 ノートの演奏にしたがって複数のオシレーターが波形を生成し、それらはミキサーによってミックスされます。
+ここでサウンドが生まれます。 ノートの打鍵にしたがって複数のオシレーターが波形を生成し、それらはミキサーによってミックスされます。
 
 ![図14: サウンド生成](../manual_xt/images/Pictures/ja/sound_generation.png)
 
@@ -447,11 +447,11 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
 詳細情報についてはテクニカルリファレンスセクションの [オシレーター](#oscillator-algorithms)を参照してください。
 
 **ピッチ (Pitch) とオクターブ (Octave)** - 選択中のオシレーターのピッチをコントロールします。
-コンテキストメニューでは数値の範囲を拡張したり、演奏されている音程に対する相対ではなく、絶対的な周波数でピッチを変更できるようにする**絶対 (Absolute)**モードに設定したりできます。
+コンテキストメニューでは数値の範囲を拡張したり、打鍵されている音程に対する相対ではなく、絶対的な周波数でピッチを変更できるようにする**絶対 (Absolute)**モードに設定したりできます。
 
-**キートラック (Keytrack)** - 無効にすると、キーボードの打鍵位置に関係なくオシレーターは常に同じピッチで発音します。 ボタンを右クリックするとシーン内のすべてのオシレーターに対してオンとオフの切り替えをすることができます。
+**キートラック (Keytrack)** - オフにすると、キーボードの打鍵位置に関係なくオシレーターは常に同じピッチで発音します。 ボタンを右クリックするとシーン内のすべてのオシレーターに対してオンとオフの切り替えをすることができます。
 
-**リトリガー (Retrigger)** - 有効にすると、オシレーターとそのすべてのユニゾンボイスは常に同じ位相位置から発音するようになります。 これは各音のアタックが毎回きっちり同じになるような歯切れのよいサウンドが必要な場合に便利です。
+**リトリガー (Retrigger)** - オンにすると、オシレーターとそのすべてのユニゾンボイスは常に同じ位相位置から発音するようになります。 これは各音のアタックが毎回きっちり同じになるような歯切れのよいサウンドが必要な場合に便利です。
 ボタンを右クリックするとシーン内のすべてのオシレーターに対してオンとオフの切り替えをすることができます。
 
 **その他のコントロール** - オシレーターエディター内のその他のスライダーは、オシレータータイプごとに固有のものです。
@@ -463,128 +463,87 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
 #### ミキサーチャンネル
 {: #mixer-channels}
 
-Excluding the **Pre-filter Gain** (slider on the right), the Mixer has 6 channels (sources) from left to right:
+**プリフィルターゲイン (Pre-filter Gain)** (右側のスライダー) を除き、ミキサーには左から右に向かって6つのチャンネル (ソース) があります。
 
-  - **Oscillators 1, 2, 3**
+  - **オシレーター1、2、3 (Oscillators 1, 2, 3)**
 
-  - **Ring Modulation of 1x2, 2x3** – The source of these two channels is **digital ring modulation** from the oscillators.
-                                      This type of RM is a bit different from the traditional carrier-modulator style ring modulation.
-                                      Digital ring modulation is simply the result of multiplying the output of oscillators 1 and 2,
-                                      or 2 and 3.
-  - **Noise Oscillator**
+  - **1x2 および 2x3 のリングモジュレーション (Ring Modulation of 1x2, 2x3)** – これら二つのチャンネルはオシレーター空の**デジタルリングモジュレーション**です。
+  このタイプのリングモジュレーションは従来のキャリア・モジュレーター型のリングモジュレーションとは若干異なります。
+  デジタルリングモジュレーションは単純にオシレーター1と2、または2と3の乗算結果の出力になります。
 
-#### Channel Parameters
+  - **ノイズオシレーター (Noise Oscillator)**
+
+#### チャンネルパラメーター
 {: #channel-parameters}
 
-Each channel has the following controls:
+各チャンネルには以下のコントロールがあります:
 
-  - **M** – Mute. You can of course have multiple channels muted at the same time, but you can also keep only the channel
-  you mute muted by holding down **Ctrl / Cmd** and clicking on the desired mute switch.
+  - **M** - ミュート (消音) です。 もちろん複数のチャンネルを同時にミュートすることができますが、 **Ctrl/command** キーを押しながらミュートボタンをクリックすることで、そのチャンネルのみをミュートすることも可能です。
 
-  - **S** – Solo (only play channels that have solo active). You can have multiple channels in solo at the same time, or
-  only one at a time by holding down **Ctrl / Cmd** and clicking on the desired solo switch.
+  - **S** - ソロ (オンになっているチャンネルのみ発音すること) です。 複数のチャンネルを同時にソロにすることができるほか、 **Ctrl/command** キーを押しながらソロボタンをクリックすることで、同時にひとつのチャンネルのみをソロにすることも可能です。
 
-  - **Triple Orange Box** (Filter routing) – Chooses which filter the channel is routed to.
-                The left position routes the channel output to filter 1, the right position
-                routes it to filter 2, while the middle position, which is selected
-                by default, routes it to both.
-                However, this setting will only route the channel output to filter
-                1 if a **serial** filter block configuration is used, since the
-                audio will then go through the second one in the filter block anyways.
-                If any other configuration than serial is used, the audio will then
-                be routed to both filters, as expected.
+  - **3つのオレンジの四角** (フィルタールーティング) - チャンネルがルーティングされるフィルターを選択します。
+  チャンネル出力をフィルター1にルーティングするには左側、フィルター2にルーティングするには右側、両方のフィルターにルーティングするには、既定で選択状態となっている中央のボックスをクリックします。
+  ただし、フィルターブロック構成で**直列 (Serial)** が使用されている場合、オーディオは必ずフィルターブロックでフィルター1、フィルター2の順番で通過するため、この設定においてはチャンネル出力はフィルター1にのみルーティングされます。 直列以外の構成が使用されている場合は、オーディオは想定通り両方のフィルターにルーティングされます。
 
-  - **Slider** – Gain control for each input.
+  - **スライダー** – 各入力に対応するゲインコントロールです。
 
 ### その他のサウンド生成パラメーター
 {: #other-sound-generation-parameters}
 
-**Pitch & Octave** – Controls the pitch for the entire scene. Affects
-the filter key-tracking and the keytrack modulation source as well. The
-range of the slider can be extended using the context menu.
+**ピッチとオクターブ (Pitch & Octave)** – シーン全体のピッチ (音程) をコントロールします。 フィルターのキートラッキング、およびキートラックモジュレーションソースにも影響を与えます。
+コンテキストメニューを使用してスライダーの範囲を拡張できます。
 
-**Portamento** – Portamento is when a new note will slide in
-pitch from the pitch of the last played note. This setting determines how
-long the slide will be. A setting of 0 disables Portamento. This parameter can be
-tempo-synced.
+**ポルタメント (Portamento)** - ポルタメントは、直前に打鍵したノートの音程から新しいノートの音程にスライドさせます。 この設定でスライド時間が決定されます。 0に設定するとポルタメントがオフになります。
+このパラメーターはテンポに同期可能です。
 
-Portamento has some interesting options accessible in its context menu:
-- **Constant rate** - If this option is enabled, the time to cover **one octave** is
-defined by the Portamento slider value. From there on, gliding between 2 octaves
-for instance will take twice as long, and so on.
-By default, this option is disabled, so the **glide rate**
-is proportional to the distance between the two keys, making it so that it
-always takes the same time to glide between **any two keys**.
-- **Glissando** - If this option is enabled, the pitch slide will be quantized
-to the scale degrees.
-- **Retrigger at scale degrees** - If this option is enabled, the FEG and AEG
-(see [Envelope Generators](#envelope-generators)) will be triggered each time the portamento
-slide crosses a scale degree.
-- **Curve options** - You can choose between a **Logarithmic**, **Linear** or **Exponential**
-portamento curve. By default, the portamento slide follows a linear curve.
+ポルタメントには、コンテキストメニューからアクセスできる興味深いオプションがいくつかあります:
+- **固定レート (Constant rate)** - このオプションをオンにすると、1オクターブ移動するのに費やされる時間はポルタメントスライダーの値によって決定されます。 これはたとえば、2オクターブを移動するのにはその倍の時間を要するようになる、ということです。
+既定ではこのオプションはオフであり、 **グライドレート (glide rate)** は2つのキーの距離に対して不変になります。 つまりどのキーの間のグライドも一定の時間を要するようになるということです。
 
-**Osc Drift** – Applies a small amount of instability to the pitch of
-all oscillators, making them subtly detuned. Although the parameter is
-shared, the randomness of the instability effect is independent for all
-oscillators and all the unison voices of each oscillator. By right-clicking
-on this control, you can choose to also randomize the pitch at the very start of
-the note by enabling the **Randomize initial drift phase** option.
+**グリッサンド (Glissando)** - このオプションをオンにすると、ピッチのスライドがスケール (音階) の度数刻みとなります。
+- **スケールの度数でリトリガーする (Retrigger at scale degrees)** - このオプションをオンにすると、ポルタメントによるスライドがスケールの度数をまたぐごとにフィルターエンベロープとアンプエンベロープ ([エンベロープジェネレーター](#envelope-generators)を参照してください) がトリガーされます。
+- **カーブオプション (Curve options)** - ポルタメントカーブを **対数的 (Logarithmic)** 、**直線的 (Linear)** 、または**指数関数的 (Exponential)** の中から選択できます。 既定のポルタメントは直線的カーブが使用されます。
 
-**Noise Color** – Affects the frequency spectrum of the noise
-generator. The middle position results in white noise. Moving the slider
-to the left emphasizes low frequencies while moving it to the right emphasizes high frequencies.
+**オシレータードリフト (Osc Drift)** - オシレーターのピッチに少量の不安定さを加えてわずかにディチューンさせます。
+パラメーターはオシレーター間で共有されますが、不安定効果のランダム性は全オシレーターおよび各オシレーターのすべてのユニゾンボイスに対して独立しています。
+このコントロールを右クリックして**初回のドリフトフェイズをランダマイズ (Randomize initial drift phase)** オプションをオンにすると、ノートの初回の音程もランダマイズすることもできます。
 
-**Bend Depth** – Pitch Bend Depth Up/Down. Controls the range of the
-pitch bend wheel, in semitones.
+**ノイズカラー (Noise Color)** - ノイズジェネレーターの周波数スベクトラムに影響を与えます。
+中央に設定するとホワイトノイズが生成されます。 スライダーを左に動かすと低周波数帯が強調され、右に動かすと高周波数帯が強調されます。
 
-This control can be extended with the dedicated option in its context menu. It enables
-type-ins of fractions and cents for configuring microtonal pitch-bends of arbitrary size within the range
-of 24 semitones.
+**ベンドデプス (Bend Depth)** - ピッチベンドの上下の深さを設定し、ピッチベンドホイールの範囲をコントロールします。 半音単位で設定可能です。
 
-**Play Mode** – Chooses how multiple notes are handled. Poly will allow
-multiple notes to be played simultaneously, while Mono will only let the last note
-play. Latch will continuously play the last played note (mono).
+このコントロールはコンテキストメニューの対応するオプションで値の範囲を拡張できます。 これにより、24半音 (2オクターブ) の範囲で小数やセント単位の値を入力して、任意の幅の微分音程を構成できます。
 
-Mono has two possible modifiers:
+**演奏モード (Play Mode)** - 複数のノートの処理方法を選択します。 Poly では複数のノートを同時に演奏でき、一方 Mono では後から打鍵したノートのみが発音されます。 Latch では最後に打鍵したノートが単音で鳴り続けます。
 
-  - **Single Trigger EG (ST)** means that the two envelope generators are
-    not restarted when sliding between two notes (two notes that overlap
-    in time)
-  - **Fingered Portamento (FP)** means that portamento is only applied when
-    sliding between notes and not when there is time between the played
-    notes.
+モノには以下のようなバリエーションがあります:
 
-When **Play Mode** is set to one of the Poly modes, the context menu of that button list will display
-additional options related to the voice allocation for a key:
-- **Stack Multiple** - Selected by default. Surge XT will play the replayed note on a new voice, in a cyclic manner
-known as round-robin.
-- **Reuse Single** - Selecting this option will make Surge XT allocate the replayed note to the same voice with which
-that note was previously played.
+  - **シングルトリガー EG (ST)** では、2基のエンベロープジェネレーターがノート間をスライドする場合 (同時に重複して鳴っている2つのノート) に再スタートしません。
+  - **フィンガーポルタメント (FP)** では、ノート間をスライド時、間隔を置かずにこれらのノートを打鍵したときのみポルタメントが適用されます。
+
+**演奏モード**が Poly に設定されている場合、ボタンリストのコンテキストメニューには鍵盤へのボイス割り当てに関連する追加オプションが表示されます:
+- **複数を重ねる (Stack Multiple)** - 既定で選択されています。 Surge XT はラウンドリボンと呼ばれる循環的な方法で、再打鍵されたノートを新しいボイスで発音します。
+- **単音を再利用 (Reuse Single)** - このオプションを選択すると Surge XT は再打鍵されたノートに対して、直前に発音されていたものと同じボイスを割り当てます。
 
 <br>
 
-When **Play Mode** is set to one of the Mono modes, the context menu of that button list will display
-additional options related to mono notes:
+**演奏モード**がいずれかの Mono モードに設定されている場合、ボタンリストのコンテキストメニューには鍵盤へのボイス割り当てに関連する追加オプションが表示されます:
 
-- **Note Priority**
-  - **Last note priority** - Will play the latest note when multiple notes are played together
-  - **High note priority** - Will play the highest note when multiple notes are played together
-  - **Low note priority** - Will play the lowest note when multiple notes are played together
-  - **Legacy note priority** - When multiple notes are played together, it will play the latest note once hit and play
-    the highest remaining note once released.
+- **ノートの優先順位 (Note Priority)**
+  - **最新のノートを優先 (Last note priority)** - 複数のノートが同時に打鍵された場合、最新のノートが発音されます
+  - **高音を優先 (High note priority)** - 複数のノートが同時に打鍵された場合、最も高い音程のノートが発音されます
+  - **低音を優先 (Low note priority)** - 複数のノートが同時に打鍵された場合、最も低い音程のノートが発音されます
+  - **レガシー (Legacy note priority)** - 複数のノートが同時に打鍵された場合、打鍵時には最新のノートを発音し、離鍵時には最も高音のノートを発音します。
 
-- **Envelope Retrigger Behavior**
-  - **Reset to zero** - Selected by default. The envelopes will immediately reset to the beginning of the attack stage
-  when pressing a note.
-  - **Continue from current level** - Selecting this option will make the envelopes start at the level they were left
-  off from the previous note.
+- **エンベロープリトリガーの挙動 (Envelope Retrigger Behavior)**
+  - **ゼロにリセット (Reset to zero)** - 既定で選択されています。 ノートが押さえられると、エンベロープはアタックステージの開始点に直ちにリセットされます。
+  - **現在位置から継続 (Continue from current level)** - このオプションを選択すると、エンベロープは直前のノートの位置から再開されます。
 
-- **Sustain pedal in mono mode**
-  - **Sustain pedal holds all notes (no note off retrigger)** - If sustain is engaged and multiple notes are hit then
-  held one after the other, Surge XT will stay on the latest note when releasing that note instead of switching to the 
-  previous note.
-  - **Sustain pedal allows note off retrigger** - If sustain is engaged and multiple notes are hit then held one after
-  the other, Surge XT will switch to the previous note when the latest note is released.
+- **Mono モードにおけるサステインペダル (Sustain pedal in mono mod)e**
+  - **すべてのノートを保持 (ノートオフをトリガーしない) (Sustain pedal holds all notes (no note off retrigger))** - サステインペダルが踏まれ、かつ複数のノートの打鍵後、それらが別々のタイミングで押さえられた場合、そのノートの離鍵時に Surge XT によって元のノートへの切り替えはされずに後から押さえられたノートを保持し続けられます。
+  - **サステインペダルでノートオフリトリガーをオンにする (Sustain pedal allows note off retrigger)** - サステインペダルが踏まれ、かつ複数のノートの打鍵後、後から押さえられたノートの離鍵後に Surge XT によって元のノートに切り替わります。
 
 <br>
 
