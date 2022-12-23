@@ -539,88 +539,69 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
 
 - **エンベロープリトリガーの挙動 (Envelope Retrigger Behavior)**
   - **ゼロにリセット (Reset to zero)** - 既定で選択されています。 ノートが押さえられると、エンベロープはアタックステージの開始点に直ちにリセットされます。
-  - **現在位置から継続 (Continue from current level)** - このオプションを選択すると、エンベロープは直前のノートの位置から再開されます。
+  - **現在位置から継続 (Continue from current level)** - このオプションを選択すると、エンベロープは直前のノートの位置が引き継がれ、そこから再開されます。
 
-- **Mono モードにおけるサステインペダル (Sustain pedal in mono mod)e**
-  - **すべてのノートを保持 (ノートオフをトリガーしない) (Sustain pedal holds all notes (no note off retrigger))** - サステインペダルが踏まれ、かつ複数のノートの打鍵後、それらが別々のタイミングで押さえられた場合、そのノートの離鍵時に Surge XT によって元のノートへの切り替えはされずに後から押さえられたノートを保持し続けられます。
-  - **サステインペダルでノートオフリトリガーをオンにする (Sustain pedal allows note off retrigger)** - サステインペダルが踏まれ、かつ複数のノートの打鍵後、後から押さえられたノートの離鍵後に Surge XT によって元のノートに切り替わります。
+- **Mono モードにおけるサステインペダル (Sustain pedal in mono mode)**
+  - **すべてのノートを保持 (ノートオフをトリガーしない) (Sustain pedal holds all notes (no note off retrigger))** - サステインペダルが踏まれ、かつ複数のノートの打鍵後、後から押さえられたノートの離鍵後に Surge XT は元のノートへの切り替えず、後から押さえられたノートを保持し続けます。
+  - **サステインペダルでノートオフリトリガーをオンにする (Sustain pedal allows note off retrigger)** - サステインペダルが踏まれ、かつ複数のノートの打鍵後、後から押さえられたノートの離鍵後に Surge XT は元のノートに切り替えます。
 
 <br>
 
 ## サウンド成形
-{: }
+{: #sound-shaping}
 
-![Illustration 15: Sound shaping](../manual_xt/images/Pictures/sound_shaping.png)
+![Illustration 15: Sound shaping](../manual_xt/images/Pictures/ja/sound_shaping.png)
 
 ### フィルターコントロール
 
-**Filter Block Configuration** – Chooses how the filters, waveshaper and
-the gain stage are connected together. Note that only the Stereo and Wide configurations
-will output a stereo signal.
+**フィルターブロック構成 (Filter Block Configuration)** - フィルター、ウェーブシェーパー、およびゲインステージの相互接続のされ方を選択します。
+ステレオ (Stereo) またはワイド (Wide) 構成のみでステレオ信号が出力されることに注意してください。
 
-- **Serial 1** - The signal from the Mixer goes into Filter 1, then into the Waveshaper, then into Filter 2, then the
-Amplifier which contains the Amplifier Envelope Generator (AEG), before going through the Scene Highpass and to the final 
-Scene Output section.
+- **直列1 (Serial 1)** - ミキサーからの信号はフィルター1に入り、その後ウェーブシェーパー、フィルター2、そしてアンプエンベロープジェネレーター (AEG) を含むアンプを経由し、最後にシーンのハイパスフィルターを通って最終出力へと至ります。
 
-- **Serial 2** - The signal path is the same as with **Serial 1**, with the addition of a feedback path going from the
-output of the Amplifier back into Filter 1.
+- **直列2 (Serial 2)** - 信号経路は**直列1 (Serial 1)** と同様ですが、アンプ出力からフィルター1へと戻されるフィードバック経路が追加されています。
 
-- **Serial 3** - The signal path is the same as with **Serial 2**, but Filter 2 is in the feedback loop, which is after 
-the signal is being tapped from the Amplifier instead of before.
+- **直列3 (Serial 3)** - 信号経路は**直列2 (Serial 2)** と同様ですが、フィルター2がフィードバックループ内に配置されている点が異なります。 したがってフィルターの信号はアンプ前ではなく後に通過することになります。
 
-- **Dual 1** - The signal from the Mixer is sent to both Filter 1 and Filter 2 in parallel. The outputs from both filters are
-then summed, then sent to the Waveshaper, then into the Amplifier, and finally in the Scene Highpass before the Scene Output section.
-Feedback is again tapped at the output of the Amplifier and goes back into both filters (it is summed with the output from the Mixer).
+- **デュアル1 (Dual 1)** - ミキサーからの信号はフィルター1とフィルター2に並列に送られます。
+両フィルターからの出力は合流してウェーブシェーパーに入った後にアンプに送られ、最後にシーンのハイパスフィルターを通ってシーンの最終出力へと至ります。
+こちらもフィードバックがアンプの出力から両フィルターに戻される形で配置されています (この信号はミキサー出力と合流します) 。
 
-- **Dual 2** - The signal path is the same as with **Dual 1**, except that the Waveshaper is only applied to Filter 1
-before its output is summed with the output from Filter 2.
+- **デュアル2 (Dual 2)** - ウェーブシェーパーがフィルター1にのみ適用される点以外の信号経路は**デュアル1 (Dual 1)** と同様です。 ウェーブシェーパーはフィルター2の出力と合流する前に出力されます。
 
-- **Stereo** - The signal path is the same as with **Dual 1**, except that Filter 1 is always on the left channel and
-Filter 2 is always on the right channel.
+- **ステレオ (Stereo)** - フィルター1が左チャンネルに、フィルター2が右チャンネルに常に出力されることを除いて、信号経路は**デュアル1 (Dual 1)** と同様です。
 
-- **Ring** - The signal path is the same as with **Dual 1**, except that the outputs from Filter 1 and 2 are multiplied
-(ring modulated) together instead of being summed before continuing onwards to the Waveshaper.
+- **リング (Ring)** - フィルター1とフィルター2からの出力は、ウェーブシェーパーに至る直前で単に合流するのではなく乗算 (リングモジュレーション) されます。 この点を除いた信号経路は**デュアル1 (Dual 1)** と同様です。
 
-- **Wide** - The signal path is the same as with **Serial 2**, except it is being doubled for a full stereo signal path.
+- **ワイド (Wide)** - 基本的に**直列2 (Serial 2)** と信号経路は同じですが、信号経路が二重構成でありステレオ化されています。
 
-**Feedback** – Controls the amount (and polarity) of output that's fed
-back into the input of the filter block. It has no effect when using filter
-block configurations without a feedback path.
+**フィードバック (Feedback)** – フィルターブロックの入力に戻される出力量 (および極性) をコントロールします。
+フィードバック経路のないフィルターブロック構成の使用時には効果を持ちません。
 
-Note:
-Be careful with your monitoring volume when using feedback. It's easy to
-make really loud high-pitched noises by mistake if you're not familiar
-with how the synth reacts to feedback.  
+メモ:
+フィードバック使用時にはモニター音量に注意してください。 フィードバックに対するシンセの反応に慣れていないと、誤って大音量かつ高音のノイズが発生させがちです。
 
-Don't let this scare you though. There's a lot to be gained from proper
-and creative use of feedback. Changing the character of filters, making
-filters interact together, making basic physical models, making sounds
-that are just about to break apart. It is these things that make
-Surge XT truly special.
+しかし恐れることはありません。 フィードバックを適切かつクリエイティブに使用することで多くの恩恵が得られます。
+フィルターのキャラクターを変える、フィルター同士を相互作用させる、基本的な物理モデルを作成する、今にもバラバラになりそうなサウンドを作るなど、 Surge XT ならではの音づくりの可能性が拡がります。
 
-**Filter Balance** – Controls how the two filters are mixed. The
-behavior depends on the filter block configuration.
+**フィルターバランス (Filter Balance)** - 2基のフィルターのミックス度合いをコントロールします。
+フィルターブロック構成によって挙動が異なります。
 
-**Type** – Selects the type of the filter. There are [numerous types available](#filters).
-You can disable the filter in question here by unchecking the **Enabled** option below the different
-filter type categories.
+**タイプ (Type)** - フィルタータイプを選択します。 フィルターには[多くの種類](#filters)があります。
+さまざまなフィルターカテゴリーの下部にある**オンにする (Enabled)** オプションのチェックを外すと、該当するフィルターをオフにすることができます。
 
-**Subtype** – Selects variations of each filter type. The difference can
-vary from subtle to radical depending on how the filter is used. See
-[Filters](#filters) in the Technical Reference section
-for information regarding subtypes of each filter type. It is displayed
-as a number next to the filter type (when available).
+**サブタイプ (Subtype)** - 各フィルタータイプのバリエーションを選択します。
+その違いはフィルターの使用のされ方によって、繊細なものから過激なものまでさまざまです。
+各フィルタータイプのサブタイプについての情報は、テクニカルリファレンス内の[フィルター](#filters) を参照してください。
+サブタイプが利用可能なフィルタータイプについては、隣に番号が表示されています。
 
-**Cutoff** – Controls the cutoff frequency of the filter. When tweaked, while its tooltip
-will show frequency in Hz, it will also show its approximate MIDI note value,
-very useful when using the filter for melodic and tuning purposes.
-You can also right-click on this control and choose the option
-**Reset cutoff to keytrack root** which makes it very easy to tune filters
-when using filter keytracking. Finally, the **Apply SCL/KBM tuning to filter cutoff**
-option can be accessed when the **Apply tuning after modulation** option is enabled in the Tuning menu.
-See the [Microtuning](#microtuning) section for more information.
+**カットオフ (Cutoff)** - フィルターのカットオフ周波数をコントロールします。
+操作中に表示されるツールチップには周波数がヘルツ (Hz) 単位で表示されますが、対応する MIDI ノート値でも表示されており、これはフィルターをメロディの演奏やチューニング目的で使用する際に大変便利です。
+このコントロールを右クリックして**カットオフをキートラックのルートにリセットする (Reset cutoff to keytrack root)** オプションを選択すると、フィルターのキートラック使用中のフィルターのチューニングがとても簡単になります。
+最後に、チューニングメニューの**モジュレーション後にチューニングを適用する (Apply tuning after modulation)** オプションをオンにしている場合は、 **SCL/KBM チューニングをフィルターに適用する (Apply SCL/KBM tuning to filter cutoff)** オプションも利用可能になります。
+詳細については[マイクロチューニング](#microtuning)を参照してください。
 
-**Resonance** – Controls the amount of resonance of the filter.
+**レゾナンス (Resonance)** - フィルターのレゾナンス (共振) 量をコントロールします。
 
 **Filter Analysis** – To open the Filter Analysis window, simply click on the small button above the filter
 balance control. It will display the current filter response according to the current type, subtype, cutoff and
