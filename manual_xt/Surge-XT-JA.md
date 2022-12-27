@@ -550,9 +550,10 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
 ## サウンド成形
 {: #sound-shaping}
 
-![Illustration 15: Sound shaping](../manual_xt/images/Pictures/ja/sound_shaping.png)
+![図15: サウンド成形](../manual_xt/images/Pictures/ja/sound_shaping.png)
 
 ### フィルターコントロール
+{! #filter-controls}
 
 **フィルターブロック構成 (Filter Block Configuration)** - フィルター、ウェーブシェーパー、およびゲインステージの相互接続のされ方を選択します。
 ステレオ (Stereo) またはワイド (Wide) 構成のみでステレオ信号が出力されることに注意してください。
@@ -603,128 +604,112 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
 
 **レゾナンス (Resonance)** - フィルターのレゾナンス (共振) 量をコントロールします。
 
-**Filter Analysis** – To open the Filter Analysis window, simply click on the small button above the filter
-balance control. It will display the current filter response according to the current type, subtype, cutoff and
-resonance settings. You can switch to the other filter by using the corresponding buttons.
+**フィルターアナリシス** - フィルターバランスコントロールの上側にある小さなボタンをクリックするとフィルターアナリシスウィンドウが開きます。
+フィルタータイプおよびサブタイプ、カットオフ、およびレゾナンスの設定に基づく現在のフィルターレスポンスが表示されます。
+各フィルターに対応するボタンをクリックするとそれぞれの表示に切り替えることができます。
 
-![Illustration 16: Filter Analysis](../manual_xt/images/Pictures/filter_analysis.png)
+![図16: フィルターアナリシス](../manual_xt/images/Pictures/filter_analysis.png)
 
-**Filter 2 Offset Button** (small "+" button to the right of the filter parameters) – When active,
-the cutoff frequency will be set relative to filter 1.
-This includes any modulations (including the hardwired FEG depth &
-keytracking). Filter 2's cutoff frequency slider **becomes an offset** setting relative
-to filter 1's cutoff frequency.
+**フィルター2 オフセットボタン** (フィルターパラメーター右側の小さな「+」ボタン) - オンにするとカットオフ周波数がフィルター1に対して相対的にセットされるようになります。
+これには (固定接続されたフィルターエンベロープの深さとキートラッキングを含む) あらゆるモジュレーションが含まれます。
+フィルター2のカットオフ周波数スライダーはフィルター1のそれに対する**相対設定となります**。
 
-**Resonance Link Button** (small button, filter 2 only) – Makes the slider
-follow filter 1's resonance slider setting.
+**レゾナンスリンクボタン** (フィルター2のみにある小さなボタン) - レゾナンススライダーをフィルター1のスライダー設定に追従するようになります。
 
-**Keytrack \> F1/F2** – Controls how much the pitch of a note affects the
-cutoff frequency of the filter. A setting of 100% means the filter
-frequency will follow the pitch harmonically.
-
+**キートラック (Keytrack) \> F1/F2** – ノートのピッチがどの程度フィルターのカットオフ周波数に影響するかをコントロールします。
+100% に設定するとフィルターの周波数が和声的にピッチに追従するようになります。
 ### エンベロープジェネレーター
+{! #envelope-generators}
 
-There are two envelope generators connected to the filter block.
+フィルターブロックには2基のエンベロープジェネレーターが接続されています。
 
-![Illustration 17: Envelope generators](../manual_xt/images/Pictures/EGs.png)
+![図17: エンベロープジェネレーター](../manual_xt/images/Pictures/EGs.png)
 
-On the left is the Filter Envelope Generator (Filter EG).
-It is hardwired to the two filters, whose depth is set by the **\>F1** and **\>F2** sliders.
+左側はフィルターエンベロープジェネレーター (Filter EG) です。
+2基のフィルターに固定接続されており、その深さ (Depth) は **\>F1** および **\>F2** スライダーで設定します。
 
-On the right is the Amplifier Envelope Generator (Amp EG). This one is hardwired to the gain
-stage of the filter block.
+右側はアンプエンベロープジェネレーター (Amp EG) です。
+こちらはフィルターブロックのゲインステージに固定接続されています。
 
-![Illustration 18: ADSR envelope structure](../manual_xt/images/Pictures/illu10.png)
+![図18: ADSR エンベロープ構造](../manual_xt/images/Pictures/ja/illu10.png)
 
-*The ADSR envelope structure*
+*The ADSR エンベロープ構造*
 
-The envelope generators are of the 4-stage ADSR type. This is the most
-common form of EG used in synthesizers and it is named after its four
-stages **Attack**, **Decay**, **Sustain** and **Release**. If you're new
-to synthesizer programming the illustration should give you a good idea
-how they work. The thing you need to remember is that after going
-through the attack & decay stages the envelope will stick in the sustain
-stage until the key is released.
+エンベロープジェネレーターは4ステージの ADSR タイプになっています。
+これはシンセサイザーで使用されているもっとも一般的な EG のタイプで、これは**アタック (Attack=立ち上がり)** 、**ディケイ (Decay=減衰)** 、**サステイン (Sustain=持続)** 、そして**リリース (Release=開放)** の4つのステージの名称に由来しています。
+シンセサイザーの音色づくりがはじめて接する方は、上図を見るとその仕組みを理解する助けとなるでしょう。
+覚えておくべきこととしては、アタックとディケイの各ステージを通過後、鍵盤を離すまでエンベロープはサステインステージにとどまるということです。
 
-**Attack**, **Decay** and **Release** are time-based parameters and can be tempo-synced by right-clicking on one of
-those sliders. You will also find an option to tempo-sync those three controls at once for each envelope generator.
+**アタック**、**ディケイ**、そして**リリース**は時間ベースのパラメーターであり、これらに対応するスライダーを右クリックするとテンポ同期を行うことができます。
+テンポ同期のオプションは各エンベロープジェネレーターのこれら3つのコントロールに対して独立して用意されています。
 
-Above the envelope stage controls is a graphic representation of the
-ADSR structure.
+エンベロープステージのコントロールの上側には、 ADSR 構造がグラフィカルに表示されています。
 
-If the envelope mode is set to **Digital**, there will be small adjustable orange fields
-on the graphic. Dragging them horizontally allows you to choose the curvature of the different stages of the envelope.
+エンベロープモードが**デジタル (Digital)** に設定されていると、 ADSR ステージのディスプレイ上に小さなオレンジ色の操作可能なフィールドが表示されます。 これらを横方向にドラッグすると各ステージのエンベロープのカーブを選択することができます。
 
-![Illustration 19: ASDR envelope fields](../manual_xt/images/Pictures/EGs_orange_fields.png)
+![図19: ASDR エンベロープフィールド](../manual_xt/images/Pictures/EGs_orange_fields.png)
 
-If the envelope mode is set to **Analog**, the curvature of the different stages
-will automatically be set to a shape that tries to emulate analog behavior.
+エンベロープモードが **アナログ (Analog)** に設定されていると、各ステージのエンベロープカーブは自動で設定され、アナログ回路の挙動のエミュレートを試みます。
 
-### Waveshaper
+### ウェーブシェーパー (Waveshaper)
+{: #waveshaper}
 
-The waveshaper module now features 43 waveforms and is an integral part of Surge's audio path.
+ウェーブシェーパーモジュールは今や48もの波形を搭載し、 Surge XT のオーディオ経路にとってなくてはならないものとなっています。
 
-![Illustration 20: Waveshaper](../manual_xt/images/Pictures/waveshaper.png)
+![図20: ウェーブシェーパー](../manual_xt/images/Pictures/waveshaper.png)
 
-**Waveshaper selector** - Menu allowing you to change the type of the non-linear wave-shaping.
-Alternatively, you can also use the arrow buttons, left-click and drag, or scroll with the mouse wheel
-over the waveshaper display to cycle through the different shapes.
+**ウェーブシェーパーセレクター** - メニューから非線形のウェーブシェーピングタイプを変更可能です。
+代わりに矢印ボタン、左クリック+ドラッグ、あるいはウェーブシェーパーディスプレイ上でマウスホイールを使用してスクロールすることで、さまざまな波形を順番に切り替えることができます。
 
-**Waveshaper drive** – The vertical slider to the right of the waveshaper display. Sets the drive amount 
-of the waveshaper. This control can be extended.
+**ウェーブシェーパードライブ** - ウェーブシェーパーディスプレイの右側の縦型のスライダーです。
+ウェーブシェーパーのドライブ量を設定します。 コントロールは拡張可能です。
 
-**Waveshaper Analysis window** - This panel can be opened by clicking on the small icon at the
-bottom of the waveshaper module. It allows you to visually preview the output of the waveshaper
-at different input levels, which can be controlled with the waveshaper's **Drive** control.
+**ウェーブシェーパーアナリシスウィンドウ** - ウェーブシェーパーモジュール下側の小さなアイコンをクリックするとこのパネルが開きます。
+これを使用してさまざまな入力レベルにおけるウェーブシェーパーの出力を視覚的にプレビューできます。
+入力レベルは、ウェーブシェーパーの**ドライブ**コントロールを使用してコントロールできます。
 
-![Illustration 21: Waveshaper analysis](../manual_xt/images/Pictures/waveshaper_analysis.png)
+![図21: ウェーブシェーパーアナリシス](../manual_xt/images/Pictures/waveshaper_analysis.png)
 
-### Other Sound Shaping Parameters
+### その他のサウンド成形パラメーター
+{! #other-sound-shaping-parameters}
 
-**Keytrack root note** – Sets the root key of the filter keytracking and the
-keytrack modulation source. At the root key, the keytrack modulation
-source will have the value zero. Above/below it it will have
-positive/negative modulation depending on the distance to the root key
-in octaves. This parameter does not affect the oscillator pitch.
+**キートラックルートノート** - フィルターのキートラッキングおよびキートラックモジュレーションソースのルートキーを設定します。
+モジュレーションソースで0の値を取る位置がすなわちルートキーとなります。
+これより高いノートはプラスの値を、低いノートはマイナスの値のモジュレーションを、それぞれルートキーからの距離に応じてオクターブ単位で取ることになります。
+このパラメーターはオシレーターのピッチに影響を与えません。
 
-**Keytrack amount sliders** - Sets the amount of filter keytracking applied to
-each filter.
+**キートラック量スライダー** - 各フィルターに適用されるフィルターキートラッキングの量を設定します。
 
-**HP** – Controls the scene high-pass filter (scene parameter). This parameter can be disabled, which will remove it
-from the audio path. You also have a choice for filter slope between **12**, **24**, **36**, **48** dB/Octave.
+**ハイパスフィルター (HP)** - シーンのハイパスフィルター (シーンパラメーター) をコントロールします。
+このパラメーターはオフにでき、これによってハイパスフィルターがオーディオ経路から取り除かれます。
+またフィルタースロープを**12**、**24**、**36**、**48** dB/オクターブの中から選択可能です。
 
-**FM configuration** – Chooses how oscillator FM (frequency modulation) is
-routed.
+**FM 構成** - オシレーターの FM (Frequency modulation=周波数変調) のルーティングのされ方を選択します。
 
-**FM depth** – Sets the depth of the oscillator FM.
+**FM デプス (FM depth)** - オシレーターの FM の深さを設定します。
 
-**Amp Vel.** - Controls how the **Amp Gain** scales with velocity. This
-is neutral at the maximum position. Other settings provide attenuation
-at lower velocities, thus this setting will never increase the **Amp
-Gain** parameter by velocity.
+**アンプベロシティ (Amp Vel.)** - ベロシティによる**アンプゲイン (Amp Gain)** のスケールをコントロールします。
+このパラメーターの最大値がニュートラルの位置となります。
+それ以外の値を設定すると、低いベロシティにおいてゲインが減衰されます。
+したがってこの設定は、ベロシティによる **アンプゲイン (Amp Gain)** パラメーターの増加をもたらすものではありません。
 
-**Amp Gain** – Controls the gain element inside the filter block.
+**アンプゲイン (Amp Gaim)** - フィルターブロック内のゲイン要素をコントロールします。
 
-### Scene Output
+### シーン出力 (Scene Output)
+{! #scene-output}
 
-The output stage is located after the filter block in the audio-path. As
-it's outside the filter block-structure changing the gain here doesn't
-have any affect on the timbre of the voice (unlike the previous
-gain-control which may affect how the feedback and wave-shaping acts),
-but it can still change the timbre of the effect section if non-linear
-effects (like distortion) are used.
+出力ステージは、オーティオ経路においてフィルターブロックの後段に位置しています。
+これはフィルターブロックストラクチャーの外側にあるため、ここでのゲイン変更は (フィードバックやウェーブシェイピング操作の影響を受ける前段のゲインとは異なり) ボイスの音色にはいかなる影響も与えませんが、非線形のエフェクト (ディストーションなど) 使用時には依然としてエフェクトセクションの音色が変化する可能性があります。
 
-**Volume** – Scene volume control. You can choose to hard clip the scene output at **+18 dBFS** (default),
-**0 dBFS** , or to **disable hard clipping** by right-clicking this control and choosing the desired option.
+**ボリューム (Volume)** - シーンのボリュームコントロールです。
+シーン出力がハードクリップするレベルを、コントロールを右クリックし **+18 dBFS** (既定) 、**0 dBFS** 、または**ハードクリップをオフにする**オプションの中から選択できます。
 
-**Pan** – Pan/balance control
+**パン (Pan)** - パン、バランスコントロールです。
 
-**Width** – The amount of stereo spread (only present for the **Stereo** and
-**Wide** filter block configurations)
+**拡がり幅 (Width)** - ステレオの拡がりの量です。 **ステレオ (Stereo)** および **ワイド (Wide)** フィルターブロック構成でのみ使用可能です。
 
-**Send FX 1/2 or 3/4 Level** – Send levels to send slot 1 to 4 (scene parameters). 
-To display the send 3/4 levels, simply select one of those send FX units in the unit selector
-(see [Effect Unit Selector](#effect-unit-selector)).
+**エフェクトセンドレベル (Send FX 1/2 または 3/4 Level)** - センドスロット1から4までのセンドレベル (シーンパラメーター) です。
+センド3と4のレベルを表示するには、ユニットセレクターで FX3 または FX4 のユニットを選択します ([エフェクトユニットセレクター](#effect-unit-selector)を参照してください) 。
 
 # Modulation/Routing
 
