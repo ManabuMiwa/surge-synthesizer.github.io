@@ -25,18 +25,21 @@ jobs:
           wget -q https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb;
           sudo apt install ./wkhtmltox_0.12.6-1.focal_amd64.deb;
           cd manual_xt;
-          pandoc -f gfm -t html Surge-XT.md -o Surge-XT-Manual.pdf
-          --css ./pdf.css -V title:""
-          --pdf-engine-opt="--footer-font-name" --pdf-engine-opt="Lato"
-          --pdf-engine-opt="--footer-font-size" --pdf-engine-opt="12"
-          --pdf-engine-opt="--footer-center" --pdf-engine-opt="[page]"
-          --pdf-engine-opt="--no-footer-line" --pdf-engine-opt="--footer-spacing" --pdf-engine-opt="10"
-          --pdf-engine-opt="--disable-smart-shrinking"
-          --pdf-engine-opt="--zoom" --pdf-engine-opt="1"
+          for filename in Surge-XT*; do
+            pandoc -f gfm -t html ${filename} -o ${FILENAME%.*}-Manual.pdf
+            --css ./pdf.css -V title:""
+            --pdf-engine-opt="--footer-font-name" --pdf-engine-opt="Lato"
+            --pdf-engine-opt="--footer-font-size" --pdf-engine-opt="12"
+            --pdf-engine-opt="--footer-center" --pdf-engine-opt="[page]"
+            --pdf-engine-opt="--no-footer-line" --pdf-engine-opt="--footer-spacing" --pdf-engine-opt="10"
+            --pdf-engine-opt="--disable-smart-shrinking"
+            --pdf-engine-opt="--zoom" --pdf-engine-opt="1"
+          done
+        shell: bash
 
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release edit surge-xt-manual -n "PDF of the [Surge XT Manual](https://surge-synthesizer.github.io/manual-xt/)"
-          gh release upload surge-xt-manual ./manual_xt/Surge-XT-Manual.pdf --clobber
+          gh release upload surge-xt-manual ./manual_xt/Surge-XT-*.pdf --clobber
