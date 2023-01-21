@@ -25,7 +25,7 @@ layout: manual
 </div>
 
 # はじめに
-{: #getting-started}
+{: #getting-started }
 
 **Surge XT** をご使用いただきありがとうございます！
 
@@ -104,16 +104,17 @@ Linux には多くのディストリビューションが存在し、また他�
 たいていの場合はデスクトップ環境のそのようなグローバルジェスチャーをオフにできますし、それがこのような問題を解消するもっとも簡単な方法になるでしょう。
 
 ### ソースコードからのビルド
-{: #building-from-source}
+{: #building-from-source }
 
 Surge XT をソースコードからビルドしたい場合は、 [Github リポジトリー](https://github.com/surge-synthesizer/surge)内の手順を参照してください。
 
 ## 旧バージョンとの共存インストール
+{: #installing-alongside-older-versions }
 
 Surge XT は Surge の進化形ではある一方、まったく新しいプラグインでもあります。 これは Surge 1.9 以前のバージョンとの共存インストールが簡単に行えること、そして旧バージョンの Surge を使用しているプロジェクトを開くには引き続き Surge 1.9 を削除せず併存させておく必要があることを意味します。
 
 ## 各ファイルの保存場所
-{: #locations}
+{: #locations }
 
 ### Windows
 
@@ -138,7 +139,7 @@ Surge XT のインストーラーはユーザーデータの格納場所には�
 したがってカスタムスキンをインストールしたり、パッチを保存したり、その他コンテンツの追加を行う場合、工場出荷データのフォルダーではなくユーザーデータフォルダーに保存するようにしてください。 これによって、 Surge XT のアップグレード時にデータを失うリスクを回避できます。
 
 # ユーザーインターフェイスの基本
-{: #user-interface-basics}
+{: #user-interface-basics }
 
 Surge XT のユーザーインターフェイスは主に4つのセクションに分けられます:
   - ヘッダー
@@ -153,7 +154,7 @@ Surge XT のユーザーインターフェイスは主に4つのセクション�
 *Surge XT のユーザーインターフェイスで分割されている4つのセクション*
 
 ## シーンの概念
-{: #the-scene-concept}
+{: #the-scene-concept }
 
 Surge XT のすべてのパッチは2つのシーン (AおよびB) とエフェクトセクションから構成されます。
 二つのシーンと全エフェクト設定の両方がパッチに保存されます。 シーンにはボイスのシンセサイズに使用される全情報が保存されるという点で、従来のシンセサイザーのパッチと似ています。
@@ -162,7 +163,7 @@ Surge XT のパッチには2つのシーンが含まれるため、ひとつの�
 ![図2: パッチにはシーンと全エフェクト設定の両方が保存される](../manual_xt/images/Pictures/ja/illu2.png)
 
 ## オーディオ出力
-{: #audio-outputs}
+{: #audio-outputs }
 
 DAW によってプラグインがロードされると、 Surge XT の各インスタンスには**3つのオーディオ出力**が用意されます:
 
@@ -173,7 +174,7 @@ DAW によってプラグインがロードされると、 Surge XT の各イン
 ホストアプリケーションによっては、これら出力を個別に加工できるように使用、ルーティングできます。
 
 ## スライダーとコントロール
-{: #sliders-and-controls}
+{: #sliders-and-controls }
 
 Surge XT でもっとも一般的なユーザーインターフェイスコントロールはスライダーです。 スライダーには横向きのものと縦向きのものがありますが、見た目以外の機能は同一です。
 
@@ -193,27 +194,27 @@ Surge XT でもっとも一般的なユーザーインターフェイスコン�
 Surge XT のパラメーターはスライダーの他に、数値の入力フィールドやボタン、およびボタン列で表示されるものもあります。
 
 ## 取り消しとやり直し
-{: #undo-and-redo}
+{: #undo-and-redo }
 
 [パッチブラウザー](#patch-browser)の下、**保存**ボタンの左側に曲がった矢印のボタンがあります。
 これらボタンをクリックすると直前の変更を取り消し (Undo) したりやり直し (Redo) したりできます。
 また、キーボードショートカットを使用して取り消し (既定では Ctrl + Z) ややり直し (既定では Ctrl + Y) を行うことも可能です。
 
 ### パラメーターコンテキストメニュー
-{: #parameter-context-menu}
+{: #parameter-context-menu }
 
 マウスの右クリックで、任意のパラメーターのコンテキストメニューを開くことができます。 このメニューには数々の便利な機能があります。
 
 ![図3: スライダーのコンテキストメニュー](../manual_xt/images/Pictures/slider_context_menu.png)
 
 #### 名前と状況依存ヘルプ
-{: #name-and-contextual-help}
+{: #name-and-contextual-help }
 
 最初のオプションをクリックすると、本ユーザーマニュアル内で該当のパラメーターについて説明されている正しい箇所が開きます。
 また、オプションにマウスカーソルを合わせて F1 キーをクリックしても同様の結果が得られます。
 
 #### 数値の編集 (Edit Value)
-{: #edit-value}
+{: #edit-value }
 
 このオプションを使用すると、パラメーターを希望する値にキーボードから直接入力できます。
 数値のポップアップが表示されると文字列がすでに選択状態となっているので、すぐに新しい値を入力開始できます。 完了したら Enter キーを押して変更を確定します。
@@ -226,7 +227,7 @@ Surge XT のパラメーターはスライダーの他に、数値の入力フ�
 ![図5: 固定値から選択するタイプのパラメーター](../manual_xt/images/Pictures/discrete_values.png)
 
 #### 数値の範囲を拡張 (Extend Range)
-{: #extend-range}
+{: #extend-range }
 
 一部のパラメーターでは、その数値の範囲を拡張できます。 そのようなパラメーターのコンテキストメニューには**値の範囲を拡張 (Extend range)** オプションが表示されます。
 たとえば**ピッチ (Pitch)** がそのようなパラメーターに該当します。
@@ -249,7 +250,7 @@ Surge XT の Classic スキンでテンポの同期を使用すると、下図�
 有効、無効を切り替えるには、該当する選択肢をクリックします。
 
 #### モジュレーション
-{: #modulations}
+{: #modulations }
 
 右クリックされたスライダーで、ひとつまたは複数のモジュレーションソースによるモジュレーションがオンになっている場合 (スライダーが青みがかっている場合) 、このメニューセクションが表示されます。 詳細については[ルーティング](#routing)を参照してください。
 
@@ -257,15 +258,15 @@ Surge XT の Classic スキンでテンポの同期を使用すると、下図�
 - **スピーカーアイコン** - クリックすると対応するモジュレーションソースをミュート (バイパス) できます。 もう一度クリックするとミュート解除します。
 - **鉛筆アイコン** - クリックするとモジュレーション量の数値入力ウィンドウが表示されます。 希望するモジュレーション量を入力すると対応するパラメーターに変更が反映されます。 詳しくは[数値の編集 (Edit Value)](#edit-value) を参照してください。
 
-#### モジュレーションの追加 (Add Modulation From...)
-{: #add-modulation-from}
+#### モジュレーションの追加 (Add Modulation From...)`
+{: #add-modulation-from }
 
 名前の示すように、このメニュー項目を使用すると右クリックされたコントロールとモジュレーション先とをリンクできます。
 利用可能なモジュレーションソースはすべてカテゴリーごとに整理されているので、簡単にお目当ての項目を見つけることができます。
 モジュレーションソースを選択すると数値入力ウィンドウが表示され、適用したいモジュレーション量を入力できます。
 
 #### パラメーターのアサイン (Assign Parameter To...)
-{: #assign-parameter-to}
+{: #assign-parameter-to }
 
 このオプションを使用すると、右クリックされたパラメーターに対して任意の MIDI コントロールチェンジを割り当てることができます。
 
@@ -276,23 +277,23 @@ Surge XT の Classic スキンでテンポの同期を使用すると、下図�
 すると、メニュー項目名が**パラメーターの MIDI メッセージ学習の中断 (Abort Parameter MIDI Learn)** に変化します。
 
 #### 学習済み MIDI メッセージのクリア (Clear learned MIDI)
-{: #clear-learned-midi}
+{: #clear-learned-midi }
 
 選択されたパラメーターがすでに MIDI メッセージを学習済みの場合にこのオプションが表示されます。 これを使用してスライダーと MIDI コントローラーとのリンクを解除できます (既存の MIDI コントロールチェンジ番号が括弧付きで表示されます) 。
 
 #### VST3 オプション (VST3 Options)
-{: #vst3-options}
+{: #vst3-options }
 
 VST3 版の Surge XT では VST3 のコンテキストメニュー項目がサポートされます。
 ホストアプリケーションにより数は異なりますが、オートメーションや MIDI 、あるいはパラメーター数値に関するオプションが表示されます。
 
 # ヘッダー
-{: #header}
+{: #header }
 
 ![図7: ヘッダーセクション](../manual_xt/images/Pictures/header.png)
 
 ## シーンの選択とシーンモード
-{: #scene-select-and-scene-mode}
+{: #scene-select-and-scene-mode }
 
 ![図8: シーンの選択とシーンモード](../manual_xt/images/Pictures/scene_select.png)
 
@@ -314,12 +315,12 @@ MPE がオフの場合、**キースプリット**および**デュアル**の�
 発音数を超過したボイスが不自然に途切れることのないよう、ボイスリミッターがこれを目立たないように消音しますので、ボイス数が制限を超えていても、あまり神経質になる必要はありません。
 
 ## パッチブラウザー
-{: #patch-browser}
+{: #patch-browser }
 
 ![図9: パッチブラウザー](../manual_xt/images/Pictures/patchbrowser.png)
 
 ### ナビゲーション
-{: #navigation}
+{: #navigation }
 
 Surge XT での音色の切り替えは簡単です: 好みの音色が見つかるまで矢印ボタンをクリックし続けるだけです。 パッチ名のフィールド (白いエリア内の任意の箇所) を左クリックすると、カテゴリーごとに整理された使用可能なパッチがメニューに一覧されます。 右クリックすると現在のカテゴリーに含まれる音色のみを一覧します。 これらのボタン上で中央クリックするとランダムなパッチがロードされます。
 
@@ -342,7 +343,7 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
 最後に、パッチメニューではパッチの名前を変更したり削除を行うこともできます。 これらのオプションはファクトリーではないパッチを読み込み時にのみ表示されます。
 
 ### パッチの検索
-{: #searching-patches}
+{: #searching-patches }
 
 名前を基準にパッチを検索するには、パッチ名左側の主眼鏡アイコンをクリックします。 
 検索文字列を入力可能になるまでに、 Surge XT が初回にパッチデータベースを更新する旨のメッセージが表示される場合があります。
@@ -352,7 +353,7 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
 メインメニュー内の[ワークフロー (Workflow)](#workflow) カテゴリーで**ロード後にパッチ検索結果を開いたままにする (Retain patch search results after loading)** オプションがオンになっている場合は、マウスによる検索結果のクリック時や Enter キーの押下時に Ctrl キーを一緒に押していると検索結果ウィンドウが閉じることができます。
 
 ### 保存ダイアログ
-{: #the-save-dialog}
+{: #the-save-dialog }
 
 ![図10: 保存ダイアログ](../manual_xt/images/Pictures/store_dialog.png)
 
@@ -367,13 +368,13 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
 既存のパッチを上書き保存する際には通常、上書きしてよいか確認するダイアログが表示されますが、パッチを保存する際に**Shift**キーを押しているとこのダイアログを表示せず、自動的にパッチを上書き保存します。
 
 ### お気に入りへのパッチの追加
-{: #favoriting-patches}
+{: #favoriting-patches }
 
 パッチ名エリアの右側にあるハートアイコンをクリックするだけで、パッチをお気に入りリストに追加できます。
 同アイコンを右クリックすると、お気に入りパッチの一覧を表示できます。
 
 ## ステータスエリア
-{: #status-area}
+{: #status-area }
 
 ![図11: ステータスエリア](../manual_xt/images/Pictures/status.png)
 
@@ -403,7 +404,7 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
 グローバル出力が **+18dBFS** (既定) あるいは **0dBFS** のどちらでハードクリップするか選択できます。
 
 # シーンコントロール
-{: #scene-controls}
+{: #scene-controls }
 
 シーンセクションの UI はさらに二つのパートに分割されます:
 
@@ -415,14 +416,14 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
 ![図13: シーンコントロール](../manual_xt/images/Pictures/ja/scene_sections.png)
 
 ## サウンド生成
-{: #sound-generation}
+{: #sound-generation }
 
 ここでサウンドが生まれます。 ノートの打鍵にしたがって複数のオシレーターが波形を生成し、それらはミキサーによってミックスされます。
 
 ![図14: サウンド生成](../manual_xt/images/Pictures/ja/sound_generation.png)
 
 ### オシレーター
-{: #oscillators}
+{: #oscillators }
 
 **1/2/3ボタン** - 編集用にアクティブとなるオシレーターを選択します。 右クリックすると**コピー (Copy)** および **モジュレーションを含めてコピー (Copy with modulation)** コンテキストメニューが表示されます。
 
@@ -461,7 +462,7 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
 {: #mixer}
 
 #### ミキサーチャンネル
-{: #mixer-channels}
+{: #mixer-channels }
 
 **プリフィルターゲイン (Pre-filter Gain)** (右側のスライダー) を除き、ミキサーには左から右に向かって6つのチャンネル (ソース) があります。
 
@@ -474,7 +475,7 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
   - **ノイズオシレーター (Noise Oscillator)**
 
 #### チャンネルパラメーター
-{: #channel-parameters}
+{: #channel-parameters }
 
 各チャンネルには以下のコントロールがあります:
 
@@ -489,7 +490,7 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
   - **スライダー** – 各入力に対応するゲインコントロールです。
 
 ### その他のサウンド生成パラメーター
-{: #other-sound-generation-parameters}
+{: #other-sound-generation-parameters }
 
 **ピッチとオクターブ (Pitch & Octave)** – シーン全体のピッチ (音程) をコントロールします。 フィルターのキートラッキング、およびキートラックモジュレーションソースにも影響を与えます。
 コンテキストメニューを使用してスライダーの範囲を拡張できます。
@@ -548,7 +549,7 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
 <br>
 
 ## サウンド成形
-{: #sound-shaping}
+{: #sound-shaping }
 
 ![図15: サウンド成形](../manual_xt/images/Pictures/ja/sound_shaping.png)
 
@@ -619,7 +620,7 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
 **キートラック (Keytrack) \> F1/F2** – ノートのピッチがどの程度フィルターのカットオフ周波数に影響するかをコントロールします。
 100% に設定するとフィルターの周波数が和声的にピッチに追従するようになります。
 ### エンベロープジェネレーター
-{! #envelope-generators}
+{! #envelope-generators }
 
 フィルターブロックには2基のエンベロープジェネレーターが接続されています。
 
@@ -637,7 +638,7 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
 
 エンベロープジェネレーターは4ステージの ADSR タイプになっています。
 これはシンセサイザーで使用されているもっとも一般的な EG のタイプで、これは**アタック (Attack=立ち上がり)** 、**ディケイ (Decay=減衰)** 、**サステイン (Sustain=持続)** 、そして**リリース (Release=開放)** の4つのステージの名称に由来しています。
-シンセサイザーの音色づくりがはじめて接する方は、上図を見るとその仕組みを理解する助けとなるでしょう。
+シンセサイザーの音色づくりにはじめて接する方は、上図を見るとその仕組みを理解する一助となるでしょう。
 覚えておくべきこととしては、アタックとディケイの各ステージを通過後、鍵盤を離すまでエンベロープはサステインステージにとどまるということです。
 
 **アタック**、**ディケイ**、そして**リリース**は時間ベースのパラメーターであり、これらに対応するスライダーを右クリックするとテンポ同期を行うことができます。
@@ -649,10 +650,10 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
 
 ![図19: ASDR エンベロープフィールド](../manual_xt/images/Pictures/EGs_orange_fields.png)
 
-エンベロープモードが **アナログ (Analog)** に設定されていると、各ステージのエンベロープカーブは自動で設定され、アナログ回路の挙動のエミュレートを試みます。
+エンベロープモードが **アナログ (Analog)** に設定されていると、各ステージのエンベロープカーブは自動で設定され、アナログ回路の挙動を模倣しようとします。
 
 ### ウェーブシェーパー (Waveshaper)
-{: #waveshaper}
+{: #waveshaper }
 
 ウェーブシェーパーモジュールは今や48もの波形を搭載し、 Surge XT のオーディオ経路にとってなくてはならないものとなっています。
 
@@ -696,7 +697,7 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
 **アンプゲイン (Amp Gaim)** - フィルターブロック内のゲイン要素をコントロールします。
 
 ### シーン出力 (Scene Output)
-{! #scene-output}
+{! #scene-output }
 
 出力ステージは、オーティオ経路においてフィルターブロックの後段に位置しています。
 これはフィルターブロックストラクチャーの外側にあるため、ここでのゲイン変更は (フィードバックやウェーブシェイピング操作の影響を受ける前段のゲインとは異なり) ボイスの音色にはいかなる影響も与えませんが、非線形のエフェクト (ディストーションなど) 使用時には依然としてエフェクトセクションの音色が変化する可能性があります。
@@ -711,162 +712,139 @@ Surge XT での音色の切り替えは簡単です: 好みの音色が見つか
 **エフェクトセンドレベル (Send FX 1/2 または 3/4 Level)** - センドスロット1から4までのセンドレベル (シーンパラメーター) です。
 センド3と4のレベルを表示するには、ユニットセレクターで FX3 または FX4 のユニットを選択します ([エフェクトユニットセレクター](#effect-unit-selector)を参照してください) 。
 
-# Modulation/Routing
+# モジュレーションとルーティング
+{: #modulationrouting }
 
-The modulation section is different from the sound generation
-and shaping sections as no audio data is passed through it. Instead it
-allows you to control the parameters in the other sections from various
-sources.
+モジュレーションセクションはオーディオデータが通過しないという点で、サウンド生成やサウンド成形セクションとは異なり、さまざまなソースから他のセクションのパラメーターをコントロールすることができます。
 
-![Illustration 22: Modulation and routing](../manual_xt/images/Pictures/modulation_routing.png)
+![図22: モジュレーションとルーティング](../manual_xt/images/Pictures/modulation_routing.png)
 
-## Routing
+## ルーティング
+{: #routing }
 
-Modulation routing in Surge XT is a bit different compared to most synthesizers,
-but it's actually very intuitive and extremely powerful, thanks to the routing bar.
+Surge XT のモジュレーションルーティングは多くのシンセサイザーと比較して少し異なりますが、ルーティングバーにより実際には大変直感的で極めてパワフルなものになっています。
 
-![Illustration 23: Routing section](../manual_xt/images/Pictures/routingbar.png)
+![図23: ルーティングセクション](../manual_xt/images/Pictures/routingbar.png)
 
-### How To Apply Modulation
+### モジュレーションの適用方法
+{: #how-to-apply-modulation }
 
-Here's how it works:
+次の手順に従います:
 
-1. Select the modulation source you want to use.
+1. 使用したいモジュレーションソースを選択します。
 
-    ![Illustration 24: Modulation source](../manual_xt/images/Pictures/routing_1.png)
+    ![図24: モジュレーションソース](../manual_xt/images/Pictures/routing_1.png)
 
-2. Engage routing mode with a second click on the source. It will become bright green,
-and sliders that can be modulated with that source will display a blue modulation depth slider on top of their 
-normal sliders.
+2. もう一度ソースをクリックするとルーティングモードに入ります。 モジュレーションソースのパネルが緑色に変化し、そのソースでモジュレーション可能なスライダーに、青色のモジュレーションデプス (深さ) スライダーが追加で表示されます。
 
-    ![Illustration 25: Engage routing mode](../manual_xt/images/Pictures/routing_2.png)
+    ![図25: ルーティングモードに入ったところ](../manual_xt/images/Pictures/routing_2.png)
 
-3. Drag the desired modulation slider (blue slider) to the position you want the parameter to be at
-when fully modulated (at the top peak of a Sine LFO, or after the attack stage of an envelope for example).
-The modulation's full range will then be shown with the corresponding range bar indicator on the slider.
+3. 希望するモジュレーションスライダー (青色のスライダー) をドラッグして、パラメーターがモジュレーションの最大の振幅としたい位置 (サイン波の LFO の上端やエンベロープのアタックステージ直後などが例として挙げられます) に合わせます。
+するとモジュレーションの最大範囲が、対応する範囲バーのインジケーターとしてスライダー上に表示されます。
 
-    ![Illustration 26: Modulation slider](../manual_xt/images/Pictures/routing_3.png)
+    ![図26: モジュレーションスライダー](../manual_xt/images/Pictures/routing_3.png)
 
-4. Disengage routing mode by clicking again on the modulation source.
+4. 再度モジュレーションソースをクリックすると、ルーティングモードを終了できます。
 
-    ![Illustration 27: Disengage routing mode](../manual_xt/images/Pictures/routing_1.png)
+    ![図27: ルーティングモードの終了](../manual_xt/images/Pictures/routing_1.png)
 
-Alternatively, routing mode can also be engaged or disengaged by pressing the **middle** mouse buttons anywhere over
-the interface, or by pressing **TAB** on the keyboard if this option is enabled (see [Workflow section](#workflow)
-in the menu).
+代わりに、インターフェイス上の任意の場所でマウスの**中央**ボタンをクリックしたり、またキーボードの **TAB** キーを押すことでもルーティングモードのオンとオフを切り替えることができます。
+なお、 TAB キーによる切り替えにはメニュー内のオプションでこの設定を有効にしておくことが必要です。 詳しくは[ワークフロー](#workflow)の節を参照してください。
 
-You can also directly access the numerical modulation amount dialog (explained [here](#edit-value))
-by dragging the desired modulation source over a modulatable parameter.
+また、希望するモジュレーションソースをモジュレーション可能なパラメーターの上にドラッグすることでモジュレーション量の数値入力ダイアログを表示させることができます。 このダイアログについては[こちら](#edit-valu)を参照してください。
 
-Note that modulation range is always **relative** to the base value represented by the gray slider,
-meaning that moving its position will then shift the whole modulation range up or down.
-This also means that if a modulation slider's value is smaller than the base value,
-the modulation polarity will be inverted.
+モジュレーション範囲は灰色のスライダーで表される基準値に対して常に**相対的**である点に注意してください。
+このことはモジュレーション位置の移動にしたがってモジュレーション幅も上下にシフトするということを示しています。
+また、モジュレーションスライダー位置が基準値よりも小さい値の場合は、モジュレーションの極性が反転するということも同時に意味しています。
 
-Also, when applying modulation to certain time-based parameters (such as Portamento, envelope attack, etc.) that are
-set to 0.00 seconds, in some cases, the modulation won't trigger properly due to the way it works internally.
-To fix this, simply increase the parameter in question by a very small amount, just so it doesn't have a value
-of 0.
+また、0.00秒に設定された特定の時間ベースのパラメーター (ポルタメント、エンベロープのアタックなどが該当します) にモジュレーションを適用する場合、内部構造上モジュレーションが正しくトリガーされません。
+これを改善するには、該当のパラメーターの値が0でなくなる程度に、ほんの少量その値を増加させてください。
 
-### Modulating a Modulator
+### モジュレーターのモジュレーション
+{: #modulating-a-modulator }
 
-When clicking on one of the LFO buttons in the routing bar, both the LFO source
-selection and the LFO editor will be selected. However, the two actions can be separated, as you can choose which button 
-is selected as the modulation routing source, and at the same time edit parameters from **a different LFO** than the source.
+ルーティングバーで LFO ボタンのいずれかをクリックすると、 LFO ソースと LFO エディターが同時に選択されますが、この操作を個別の行うことも可能です。
+つまり、モジュレーションルーティングソースとして選択中のボタンを選ぶと同時に、ソースとは**別の LFO** のパラメーターを編集できるということです。
 
-To do that, select the source normally, and then click
-on the mini-button on another LFO (the small orange arrow):
+これを行うには通常どおりソースを選択後、別の LFO のミニボタン (小さなオレンジ色の矢印) をクリックします:
 
-![Illustration 28: Modulation section](../manual_xt/images/Pictures/modulationsourceselectionbar.png)
+![図28: モジュレーションセクション](../manual_xt/images/Pictures/ja/modulationsourceselectionbar.png)
 
-Alternatively, you can also left-click on a modulation source while holding **Ctrl / Cmd** to display it
-in the LFO editor as well.
+代わりに、 **Ctrl / Cmd** キーを押しながらモジュレーションソースをマウスで左クリックして LFO エディター上にこれを表示させることもできます。
 
-This effectively lets you **modulate the parameters of one LFO with any other mod source(s)**.
-However, as an example, note that logistically, an S-LFO can modulate parameters of an LFO, but
-an LFO **cannot** modulate parameters of an S-LFO
-(see [Voice vs Scene Modulators](#voice-vs-scene-modulators)).
+これによって**ある LFO のパラメーターを別のモジュレーションソースで変調する**ことが可能になります。
+しかし構造上の理由から、たとえば S-LFO は LFO のパラメーターを変調可能ですが、逆に LFO で S-LFO のパラメーターを変調することは**できない**ことに注意してください ([ボイスモジュレーション vs シーンモジュレーション](#voice-vs-scene-modulators)を参照してください) 。
 
-Remember that you can also see which LFO is currently being displayed in the editor by looking at what's written
-vertically to the left of the editor.
+また LFO エディター左側に縦書きされている内容から、現在エディターに表示されている LFO を判別できることも頭に入れておいてください。
 
-### Modulated Sliders
+### モジュレーションされているスライダー
+{: #modulated-sliders }
 
-Once a slider is routed to a modulation source, the shade of blue on its tray indicates
-whether the parameter is modulated and by which source.
+スライダーがモジュレーションソースにルーティングされると、溝の青色の色味によってパラメーターがモジュレーション対象であるか、またどのソースによってモジュレーションされているかを判別できます。
 
-![Illustration 29: Modulation sliders](../manual_xt/images/Pictures/illu7.png)
+![図29: モジュレーションスライダー](../manual_xt/images/Pictures/illu7.png)
 
-1) Parameter is not modulated (gray)
+1) モジュレーションされていないパラメーター (灰色)
 
-2) Parameter is modulated (gray-blue)
+2) モジュレーションされているパラメーター (ブルーグレー)
 
-3) Parameter is modulated by the currently selected modulation source (bright-blue)
+3) 現在洗濯中のソースによってモジュレーションされているパラメーター (明るい青色)
 
-Moreover, if you hover your mouse pointer over any modulated slider, the source(s) it's being modulated
-from will be highlighted in the routing bar. This makes it easier to see what modulation source(s) are
-linked to a parameter.
+さらに、モジュレーションされているスライダーにマウスポインターをホバーさせると、モジュレーション元のソースがルーティングバーでハイライトされるため、パラメーターにリンクされているモジュレーションソースを見つけるのが容易になります。
+### モジュレーションソースセレクター
+{: #modulation-source-selectors }
 
-### Modulation Source Selectors
+モジュレーションソースにパラメーターがルーティングされると、それが選択中であるか、または現在のパッチにルーティングされているかによってセレクターの外観が変化します (シーンの選択状態が反映されます) 。
 
-Once routed to any parameter, the modulation source selectors change their appearance depending if they are selected,
-and if they are routed in the current patch or not. (scene dependent)
+![図30: モジュレーションソースの外観](../manual_xt/images/Pictures/mod_source_buttons.png)
 
-![Illustration 30: Modulation source appearance](../manual_xt/images/Pictures/mod_source_buttons.png)
+1) 未使用のモジュレーションソース
 
-1) Unused modulation source
+2) 使用中のモジュレーションソース
 
-2) Used modulation source
+3) 未使用かつ選択中のモジュレーションソース
 
-3) Unused selected modulation source
+4) 使用中かつ選択中のモジュレーションソース
 
-4) Used selected modulation source
+モジュレーションバー内の一部のモジュレーションソースにはハンバーガーメニューがあります。
+これはそのモジュレーションの別タイプが利用可能であることを示しています。
+ハンバーガーメニューをクリックしてこれらに直接アクセスできるほか、セレクターを右クリックして**モジュレーション切り替え... (Switch to...)** サブメニューを選択したり、または該当のモジュレーションソースセレクター上でマウスホイールをスクロールさせて切り替えることもできます。
 
-Some modulation source selectors in the routing bar have a hamburger menu. This serves as an indicator that
-different types of that modulation source are available. You can access them directly by clicking on that
-hamburger menu, by right-clicking and going into the **Switch to...** submenu, or simply by scrolling with
-the mouse wheel over the modulation source selector in question.
+![図31: モジュレーションソースのハンバーガーメニュー](../manual_xt/images/Pictures/hamburger_menu_modsource.png)
 
-![Illustration 31: Modulation source hamburger menu](../manual_xt/images/Pictures/hamburger_menu_modsource.png)
+### モジュレーションのクリア
+{: #clearing-modulation }
 
-### Clearing Modulation
+モジュレーションスライダーを右クリックすると、簡単にモジュレーションをクリアしてモジュレーションソースから切り離すことのできるオプションがあります。
 
-After right-clicking on a modulated slider, you will see an option to easily clear the modulation and un-link it from its source.
+![図32: モジュレーションのクリア](../manual_xt/images/Pictures/clear_modulation.png)
 
-![Illustration 32: Clearing modulation](../manual_xt/images/Pictures/clear_modulation.png)
+また、ルーティングモードがオンのときにモジュレーションスライダー (青いスライダー) をダブルクリックすることでこれを0にリセットしたり、数値入力ダイアログに0を入力してモジュレーションを解除することもできます ([値を編集](#edit-value)を参照してください) 。
 
-Alternatively, you can also reset its modulation slider (blue slider) to 0 by double-clicking on it
-when routing mode is engaged, or entering 0 in the type-in editor (see [Edit Value](#edit-value)).
+さらに、モジュレーションソースを右クリックすると、そのソースにリンクされたすべてのパラメーターに対して一度にモジュレーションをクリアできるオプションもあります。
 
-Furthermore, by right-clicking on any modulation source, there will be options to clear a particular linked parameter,
-but also all of them at once.
+![図33: モジュレーションコンテキストメニュー](../manual_xt/images/Pictures/modsource_context_menu.png)
 
-![Illustration 33: Modulation context menu](../manual_xt/images/Pictures/modsource_context_menu.png)
+## モジュレーションリスト
+{: #modulation-list}
 
-## Modulation List
+Surge XT には、ルーティングバー左側の縦長の四角いボタンをクリックすることで表示できる、詳細なモジュレーションリストが用意されています。
 
-Surge XT has a detailed modulation list that can be displayed by clicking on the vertical rectangular button at the left of the routing bar:
+![図34: モジュレーションリストウィンドウ](../manual_xt/images/Pictures/modlist.png)
 
-![Illustration 34: Modulation list window](../manual_xt/images/Pictures/modlist.png)
+このパネルでは、現在のパッチ内の二つのシーンからモジュレーションルーティングおよびその量が表示されます。
+インターフェイスの左側を操作すると、別の表示オプションに切り替えることもできます。
 
-This panel will display the modulation routings and their amounts from both scenes in the current patch.
-Different display options are available to the left of its interface:
+**並び順 (Sort by)** - モジュレーションのリストをモジュレーション元のソースごとか、ルーティング先のターゲット5とか、どちらの基準でグルーピングされるかを選択できます。
 
-**Sort by** - Allows you to choose whether the list of modulations is grouped according to the source they are
-coming from or to the target they are routed to.
+**絞り込み... (Filter By...)** - リスト中から希望するソースまたはターゲットを選択し、そこに含まれないものを除外することで、特定のモジュレーションルーティングのみを表示させることができます。
 
-**Filter By...** - This option allows you to only display certain modulation routings by hiding those that
-aren't included in the desired source or target in this list.
+**モジュレーションの追加 (Add Modulation)** - これら二つのメニューを使用して、モジュレーションリストパネルから直接、新規のモジュレーションルーティングを追加することができます。
+モジュレーションソースとターゲットを選択して、モジュレーション対象とパラメーターを接続してください。
 
-**Add Modulation** - These two menus allow you to directly add a new modulation routing directly from the
-modulation list panel. Simply select a modulation source and a modulation target to link a modulator to a
-parameter.
+**値ディスプレイ (Value Display)** - スライダーセクション内に表示されるモジュレーション値について、**なし (None)** から**値、デプス、レンジ (Values, Depths and Ranges)** までの4つの異なる表示モードの中から選択できます。
 
-**Value Display** - Allows you to choose between 4 different display options regarding the modulation values
-displayed in the sliders section, ranging from **None** to **Values, Depths and Ranges**.
-
-Finally, in the sliders section, you can both adjust the different modulation amounts, but also directly
-**mute** or **remove** a modulation routing entirely.
+スライダーセクション内では、さまざまなモジュレーション量の調整だけでなく、モジュレーションのルーティングの**ミュート**や**削除**を行うことも可能です。
 
 ## Modulators
 
