@@ -1,8 +1,7 @@
 ---
+layout: manual
 title: Surge XT ユーザーマニュアル
 permalink: /manual-xt-JA/
-noheader: true
-toc_levels: 1..3
 margin-top: 2cm
 margin-bottom: 2cm
 margin-left: 2cm
@@ -11,10 +10,6 @@ layout: manual
 ---
 
 <div class="pdf-hide" markdown="1">
-
-[PDF 版](https://github.com/surge-synthesizer/surge-synthesizer.github.io/releases/download/surge-xt-manual/Surge-XT-JA-Manual.pdf)
-
-</div>
 
 <div class="pdf-firstpage" markdown="1">
 
@@ -846,67 +841,63 @@ Surge XT には、ルーティングバー左側の縦長の四角いボタン�
 
 スライダーセクション内では、さまざまなモジュレーション量の調整だけでなく、モジュレーションのルーティングの**ミュート**や**削除**を行うことも可能です。
 
-## Modulators
+## モジュレーター
+{: #modulators }
 
-Surge XT has four main types of modulation sources :
+Surge XT には大きく分けて4種類のモジュレーションソースが用意されています:
 
- - LFOs
- - Internal modulators
- - Voice and note properties
- - Macros
+ - LFO
+ - 内部モジュレーター
+ - ボイスおよびノートのプロパティ
+ - マクロ
 
-All of these modulation sources are located in the routing bar (see [Routing](#routing)) :
+これらすべてのモジュレーションソースはルーティングバーに位置しています ([ルーティング](#routing) を参照してください) :
 
-![Illustration 35: Routing bar](../manual_xt/images/Pictures/routingbar.png)
+![図35: ルーティングバー](../manual_xt/images/Pictures/routingbar.png)
 
-![Illustration 36: Routing bar sections](../manual_xt/images/Pictures/routingbar_sections.png)
+![図36: ルーティングバーのセクション](../manual_xt/images/Pictures/routingbar_sections.png)
 
-*The four types of modulation sources, separated in categories.*
+*4つのタイプのモジュレーションソースはカテゴリーごとに分割されています。*
 
-### Voice vs Scene Modulators
+### ボイスモジュレーション vs シーンモジュレーション
+{: #voice-vs-scene-modulators }
 
-Some modulation sources operate at the voice level, while others operate at the scene level.
-Although they might seem similar, there is an important factor that distinguishes them.
+モジュレーションにはボイス単位で機能するものと、シーン単位で機能するものとに分けられます。
+一見すると違いがないように感じられるかもしれませんが、両者を分つ重要な要素があります。
 
-One one hand, a voice modulator has separate modulation paths *for each voice*, meaning it can
-control voice-level parameters (like filter cutoff) but cannot control scene level parameters (like FX levels or scene pitch).
+ボイスモジュレーターには*ボイスごとに*別々のモジュレーションパスがあり、これは (フィルターのカットオフのような) ボイス単位のパラメーターをコントロール可能ですが、 (エフェクトレベルやシーンピッチなど) シーン単位のパラメーターをコントロールすることは不可能であることを示しています。
 
-On the other hand, a scene modulator has one identical modulation path *for the whole scene*, so it can control both scene 
-level parameters **and** voice level parameters.
+一方で、シーンモジュレーターには*シーン全体に対して*同一のモジュレーションパスがひとつだけあり、シーン単位のパラメーター**に加えて**ボイスレベルのパラメーターもコントロールすることができます。
 
-![Illustration 37: Modulation source labels](../manual_xt/images/Pictures/modsource_labels.png)
+![図37: モジュレーションソースのラベル](../manual_xt/images/Pictures/modsource_labels.png)
 
-*On top, three voice LFOs. On the bottom, three Scene LFOs, "S-" meaning Scene.*
+*上段には3つのボイス LFO があり、下段には3つのシーン LFO があります。 "S-" はシーンモジュレーションを表しています。*
 
-To demonstrate this distinction, let's say an sine wave LFO is modulating the cutoff of a filter.
-Now, if 3 notes are being hit with a small delay between each of them, the phase of the LFO will 
-be delayed between the notes accordingly.
+両者の違いを説明するため、たとえばサイン波の LFO がフィルターのカットオフをモジュレーションしている場合を考えてみましょう。
+ここで3つのノートがそれぞれお互いに少しタイミングをずらして打鍵された場合、それに応じて LFO の位相もお互いにずれが発生します。
 
-You will indeed clearly hear the cutoff of the filter moving independently for each note, which gives the impression 
-that there are three LFOs and three filters (which there actually is!). The same principle applies for envelopes.
+実際に、あたかも3組ずつのフィルターと LFO がそれぞれ存在するかのように (実際に存在します！) 、フィルターカットオフが各ノートに対して独立して動いているのをはっきりと聴くことができます。
+エンベロープに対しても同じ原則が当てはまります。
 
-However, unlike the first demonstration, this time, if an S-LFO is modulating a certain parameter,
-hitting more notes will not "add" an LFO for each voice, which gives the impression that there is a single LFO
-modulating the cutoff frequency of the filter instead of many.
+しかし上記の例と異なり、今度は シーン LFO (S-LFO) あるパラメーターをモジュレーションしている場合、追加でノートを打鍵しても各ボイスに対して LFO は「追加」されず、これは多数ではなく単一の LFO がフィルターカットオフをモジュレーションしているような印象を与えます。
 
-See [Modulation Routing Details](#modulation-routing-details) in the Technical Reference section for more information.
+詳細についてはテクニカルリファレンスの [モジュレーションルーティングの詳細](#modulation-routing-details) を参照してください。
 
 ### LFOs
+{: #lfos }
 
-Compared to some other synthesizers, Surge XT does not have dedicated **LFO**, **Envelope**, **Step sequencer** or
-**MSEG** modulation sources. Instead, those are integrated within every LFO. This effectively enables the
-flexibility of having up to 12 LFOs, envelopes, step sequencers or MSEGs, and everything in between simply by
-changing their shape.
+他のいくつかのシンセサイザーと異なり、 Surge XT には専用の **LFO** 、 **エンベロープ**、**ステップシーケンサー**、あるいは**MSEG (マルチセグメントエンベロープ)** モジュレーションが存在しません。
+代わりにこれらは全 LFO に統合されています。
+このことは、波形の変更によって、質的に12基の LFO 、エンベロープ、ステップシーケンサー、あるいは MSEG などありとあらゆるものを備えることに相当します。
 
-Surge XT's LFOs are very flexible and come with a built in DAHDSR-envelope which can
-either work as a dedicated envelope generator or shape the amplitude of other modulation types over time.
+Surge XT の LFO は大変柔軟で、専用のエンベロープジェネレーターとして機能する、あるいは時間の経過にともなって他のモジュレーションタイプの新服を変化させることのできる DAHDSR エンベロープを備えています。
 
-![Illustration 38: LFO editor](../manual_xt/images/Pictures/lfo_editor.png)
+![図38: LFO エディター](../manual_xt/images/Pictures/lfo_editor.png)
 
-Surge XT has a total of 12 LFOs:
+Surge XT には合計して12基の LFOs が用意されています:
 
- - 6 Voice LFO sources (labeled LFO 1-6 for instance)
- - 6 Scene LFO sources (labeled S-LFO 1-6 for instance)
+ - 6基のボイス LFO ソース (LFO1 から LFO6 といったように表示されています)
+ - 6基のシーン LFO ソース (S-LFO1 から S-LFO6 といったように表示されています)
 
 See [Voice vs. Scene](#voice-vs-scene-modulators) for an explanation about the difference LFOs and S-LFOs.
 
